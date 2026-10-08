@@ -3,33 +3,151 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ellipsa</title>
-<meta name="description" content="Ellipsa is a desktop assistant that remembers the people and work in your day and helps you follow up.">
-<link rel="stylesheet" href="style.css">
+<title>Ellipsa: every promise, sorted by person</title>
+<meta name="description" content="Ellipsa is a desktop assistant that reads your email, calendar, Slack and calls, keeps a pigeonhole for everyone you work with, and flags what's owed.">
+<meta name="theme-color" content="#0E1426">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }</script>
+<script type="module" src="rack.js"></script>
 </head>
 <body>
-<main>
-  <nav><a href="./" aria-current="page">Ellipsa</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
-  <h1>Ellipsa</h1>
-  <p class="lede">A desktop assistant that remembers the people and work in your day, and helps you follow up.</p>
+<a class="skip" href="#main">Skip to content</a>
 
-  <p>Ellipsa runs on your own Windows computer. It keeps a private memory of the people you work with, your conversations, meetings and tasks, and uses it to give you a daily briefing, point out things you meant to follow up on, answer questions about your work, draft emails in your own voice and schedule calls.</p>
+<header class="bar">
+  <a class="mark" href="./" aria-label="Ellipsa home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><circle cx="10" cy="16" r="2" fill="#0E1426"/><circle cx="16" cy="16" r="2" fill="#0E1426"/><circle cx="22" cy="16" r="2" fill="#0E1426"/></svg>
+    <span>Ellipsa</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#day">How it works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#mac">Mac waitlist</a>
+  </nav>
+  <a class="btn btn-small" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
+</header>
 
-  <h2>Connected services</h2>
-  <p>You choose what to connect, and you can disconnect at any time:</p>
-  <ul>
-    <li><strong>Google</strong> (Gmail and Calendar): your email and schedule, drafts for your review, and meetings you set up.</li>
-    <li><strong>Slack</strong>: the conversations you are part of.</li>
-    <li><strong>Notion</strong>: only the pages you choose to share with Ellipsa.</li>
-    <li><strong>GitHub</strong>: issues and pull requests you are involved in.</li>
-  </ul>
-  <p>Anything that sends, deletes or changes something, such as sending an email or creating a calendar event, waits for your approval first.</p>
+<canvas id="rack" aria-hidden="true"></canvas>
+<div class="scrim" aria-hidden="true"></div>
 
-  <p>Your memory is stored on your computer. How your information is handled is set out in the <a href="privacy.html">Privacy Policy</a>.</p>
+<main id="main">
+  <section class="hero" data-stop="-1">
+    <div class="hero-copy">
+      <h1>Every promise,<br> <span class="nowrap">sorted by person.</span></h1>
+      <p class="lede">Ellipsa reads your email, calendar, Slack and calls, keeps a pigeonhole for everyone you work with, and flags what's owed.</p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
+        <a class="quiet" href="#mac">On a Mac? Join the waitlist</a>
+      </div>
+    </div>
 
-  <p class="notice">Ellipsa is pre-release software in private testing with invited users. It is not offered to the general public.</p>
+    <aside class="reverse" aria-label="Example slips">
+      <div class="tabs" role="tablist" aria-label="Pick a slip">
+        <button role="tab" data-slip="dana" aria-selected="true">Dana</button>
+        <button role="tab" data-slip="priya" aria-selected="false">Priya</button>
+        <button role="tab" data-slip="marcus" aria-selected="false">Marcus</button>
+        <button role="tab" data-slip="lena" aria-selected="false">Lena</button>
+      </div>
+      <article class="slip" role="tabpanel" aria-live="polite" data-kind="promise">
+        <p class="stamp" data-field="status">You promised · due Fri</p>
+        <h2 data-field="title">Venue options for the offsite</h2>
+        <blockquote data-field="quote">“I'll send three venue options by Friday.”</blockquote>
+        <p class="src" data-field="source">You, in Gmail · Tue 6 Oct, 4:12 pm · thread “Offsite planning”</p>
+      </article>
+      <p class="note">Example people. Your rack fills from your own email, calendar and calls.</p>
+    </aside>
+  </section>
 
-  <footer>Contact: <a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+  <section id="day" class="day" aria-labelledby="day-title">
+    <h2 id="day-title" class="day-title">One day, sorted.</h2>
+    <div class="stop" data-stop="0">
+      <h3><time class="time">08:30</time> Your briefing</h3>
+      <p>Three people are waiting on a reply. You told Dana you'd send venue options by Friday. Ellipsa can read it to you while you make coffee.</p>
+    </div>
+    <div class="stop" data-stop="1">
+      <h3><time class="time">13:55</time> Before the call</h3>
+      <p>Last time, Priya asked for the Q3 numbers and you said you'd bring them. Her card shows what each of you promised.</p>
+    </div>
+    <div class="stop" data-stop="2">
+      <h3><time class="time">14:20</time> During it</h3>
+      <p>Ask out loud, “what did we agree on pricing?” The answer comes from your own records while you're still talking. No bot joins the call.</p>
+    </div>
+    <div class="stop" data-stop="3">
+      <h3><time class="time">16:10</time> After</h3>
+      <p>Your reply to Marcus is drafted in your own voice and the next call is booked in a free slot. Nothing is sent until you say so.</p>
+    </div>
+  </section>
+
+  <div class="solid">
+    <section class="log" aria-labelledby="log-title">
+      <h2 id="log-title">Everything lands in the right slot.</h2>
+      <ol class="entries" role="list">
+        <li><span class="when">Day one</span><p>Reads the last 30 days of Gmail, Calendar, Slack, Notion and GitHub, so your first briefing already knows your people.</p></li>
+        <li><span class="when">Every morning</span><p>A briefing of who is waiting on you, what you promised and who you're meeting. It can read it aloud.</p></li>
+        <li><span class="when">Each person</span><p>A card with how you talk, what each side promised, and whether the relationship is going quiet.</p></li>
+        <li><span class="when">In calls</span><p>Answers from your memory while you talk, and the action items waiting when you hang up.</p></li>
+        <li><span class="when">Replies</span><p>Drafts in your voice and calls booked in your free slots. Anything only you can fill in is marked, and sending waits until it's done.</p></li>
+        <li><span class="when">Other AI apps</span><p>The same memory inside Claude, Cursor, VS Code and five more, through MCP.</p></li>
+      </ol>
+    </section>
+
+    <section id="privacy" class="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Your memory stays on your computer.</h2>
+      <div class="facts">
+        <p><strong>Encrypted on disk.</strong> Your memory is stored on your own computer, encrypted, with daily encrypted backups.</p>
+        <p><strong>You approve every action.</strong> Nothing is sent, booked, changed or deleted until you say yes.</p>
+        <p><strong>Calls stay yours.</strong> No bot joins the meeting, and call audio is never saved to disk.</p>
+      </div>
+      <p class="fine">To answer you, Ellipsa sends only what a question needs to OpenAI, through Ellipsa's relay. The <a href="privacy.html">privacy policy</a> sets out exactly what goes where.</p>
+    </section>
+
+    <section class="apps" aria-labelledby="apps-title">
+      <h2 id="apps-title">Works with what you already use.</h2>
+      <ul class="cells" aria-label="Connected apps">
+        <li><img src="logos/gmail.svg" alt="Gmail" width="40" height="40"></li>
+        <li><img src="logos/googlecalendar.svg" alt="Google Calendar" width="40" height="40"></li>
+        <li><img src="logos/slack.svg" alt="Slack" width="40" height="40"></li>
+        <li><img src="logos/notion.svg" alt="Notion" width="40" height="40"></li>
+        <li><img src="logos/github.svg" alt="GitHub" width="40" height="40"></li>
+        <li><img src="logos/claude.svg" alt="Claude" width="40" height="40"></li>
+        <li><img src="logos/cursor.svg" alt="Cursor" width="40" height="40"></li>
+        <li><img src="logos/vscode.svg" alt="VS Code" width="40" height="40"></li>
+        <li><img src="logos/windsurf.svg" alt="Windsurf" width="40" height="40"></li>
+        <li><img src="logos/googlegemini.svg" alt="Gemini CLI" width="40" height="40"></li>
+      </ul>
+      <p class="fine">Several Google accounts at once. Your memory also works in Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Gemini CLI, Codex and LM Studio.</p>
+    </section>
+
+    <section class="close" aria-labelledby="close-title">
+      <h2 id="close-title">Start with your last 30 days.</h2>
+      <div class="split">
+        <div class="win">
+          <p class="platform">Windows 10 and 11</p>
+          <p>Install, connect Google, and Ellipsa reads your last 30 days.</p>
+          <p class="beta">Ellipsa is in a private beta. Windows may warn that the installer comes from an unknown publisher, and Google sign-in is open to invited testers for now.</p>
+          <a class="btn" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
+        </div>
+        <form id="mac" class="mac" novalidate>
+          <p class="platform">macOS</p>
+          <p>The Mac app is next. Leave your email and we'll write once, when it's ready.</p>
+          <label for="email">Email</label>
+          <div class="row">
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="mac-msg">
+            <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn" type="submit">Join the Mac waitlist</button>
+          </div>
+          <p id="mac-msg" class="msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><circle cx="10" cy="16" r="2" fill="#0E1426"/><circle cx="16" cy="16" r="2" fill="#0E1426"/><circle cx="22" cy="16" r="2" fill="#0E1426"/></svg><span>Ellipsa</span></p>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></nav>
+      <p class="fine">© 2026 Ellipsa</p>
+    </footer>
+  </div>
 </main>
 </body>
 </html>
