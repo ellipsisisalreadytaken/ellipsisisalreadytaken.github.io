@@ -122,8 +122,34 @@
     apps: 'i read these. carefully.',
     happy: 'yay! go on, try me.',
   };
-  const BOOPS = ['boop.', 'hehe, that tickles…', 'still remembering…', 'i’m on it…', 'you rang?'];
-  let boopN = 0;
+  // What it thinks when you poke it: a few for any time, some for the mood it's in, some for the hour
+  const BOOPS = {
+    any: ['boop.', 'hehe, that tickles…', 'you rang?', 'i’m awake, i promise.', 'careful, i bruise like a peach.',
+      'that’s one poke. i’m keeping count.', 'hi again!', 'i was just thinking about your inbox…', 'nothing slips past me. well, almost nothing.',
+      'did you mean to do that?', 'poke me again and i’ll remember it.', 'beep boop. i mean, hello.', 'i contain three dots and multitudes.',
+      'still here. still remembering.', 'want a briefing? i love a briefing.', 'squish!', 'i know what you promised Dana…',
+      'you smell like unread email.', 'that was a good poke. 8 out of 10.', 'ok ok, i’m listening…'],
+    face: ['who are we talking to today?', 'i never forget a face. or a promise.', 'looking good. the inbox, less so.'],
+    ellipsis: ['typing… just kidding.', 'i was in the middle of a thought…', 'hold that thought. actually, i will.'],
+    listen: ['shh, i’m listening.', 'i only listen when you ask.', 'nothing gets saved. pinky promise.'],
+    list: ['3 things before lunch. you’ve got this.', 'i made you a list. you’re welcome.', 'first up: Marcus.'],
+    badge: ['psst, something’s waiting for your ok.', 'i won’t send it without you.', 'one click and it’s done.'],
+    happy: ['yay!', 'best day ever.', 'go on, i’m ready.'],
+  };
+  const hour = new Date().getHours();
+  const BY_HOUR = hour < 5 ? ['shouldn’t you be asleep?', 'night owl, huh.'] : hour < 12 ? ['morning! coffee first?', 'early start. i like it.']
+    : hour < 18 ? ['afternoon slump? i’ve got you.', 'how’s the to-do list holding up?'] : ['still working? i’ll remember the rest.', 'evening! wrapping up?'];
+  let lastBoop = '';
+  let pokes = 0;
+  function boopLine() {
+    pokes++;
+    if (pokes === 7) return 'seven pokes. are we friends now?';
+    if (pokes === 15) return 'ok, you really like poking me.';
+    const pool = [...BOOPS.any, ...(BOOPS[mode] || []), ...(BOOPS[mode] || []), ...BY_HOUR];
+    let line;
+    do { line = pool[Math.floor(Math.random() * pool.length)]; } while (line === lastBoop && pool.length > 1);
+    return (lastBoop = line);
+  }
 
   function setMode(next, line) {
     if (next === mode && !line) return;
@@ -137,7 +163,7 @@
   pebbleEl.addEventListener('click', () => {
     peb.squish.v = 0.8;
     for (const d of dots) d.y.vel -= 700;
-    say(BOOPS[boopN++ % BOOPS.length], 1800);
+    say(boopLine(), 2200);
   });
 
   // ---------- The loop ----------
