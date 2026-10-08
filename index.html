@@ -1,153 +1,160 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ellipsa: every promise, sorted by person</title>
-<meta name="description" content="Ellipsa is a desktop assistant that reads your email, calendar, Slack and calls, keeps a pigeonhole for everyone you work with, and flags what's owed.">
-<meta name="theme-color" content="#0E1426">
+<title>ellipsa · never leave it at “…”</title>
+<meta name="description" content="Ellipsa remembers every person and promise across your email, calendar, Slack and calls, and nudges you before anything slips.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/crimson-italic-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
-<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }</script>
-<script type="module" src="rack.js"></script>
+<script>document.documentElement.classList.remove("no-js")</script>
+<script src="dots.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="bar">
-  <a class="mark" href="./" aria-label="Ellipsa home">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><circle cx="10" cy="16" r="2" fill="#0E1426"/><circle cx="16" cy="16" r="2" fill="#0E1426"/><circle cx="22" cy="16" r="2" fill="#0E1426"/></svg>
-    <span>Ellipsa</span>
-  </a>
+  <a class="wordmark" href="./" aria-label="Ellipsa home">ellipsa</a>
   <nav aria-label="Sections">
-    <a href="#day">How it works</a>
+    <a href="#button">The button</a>
+    <a href="#day">A day</a>
     <a href="#privacy">Privacy</a>
-    <a href="#mac">Mac waitlist</a>
+    <a href="#get">Mac waitlist</a>
   </nav>
-  <a class="btn btn-small" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
+  <a class="pill pill-small" href="#get">Get the Windows beta</a>
 </header>
 
-<canvas id="rack" aria-hidden="true"></canvas>
-<div class="scrim" aria-hidden="true"></div>
+<!-- The mascot: one pebble with three dots, drawn by dots.js. It starts in the hero and becomes the corner button. -->
+<div class="mascot" aria-hidden="true">
+  <div class="pebble"><span class="badge">2</span></div>
+  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <p class="bubble"></p>
+</div>
 
 <main id="main">
-  <section class="hero" data-stop="-1">
+  <section class="hero" data-mode="face">
     <div class="hero-copy">
-      <h1>Every promise,<br> <span class="nowrap">sorted by person.</span></h1>
-      <p class="lede">Ellipsa reads your email, calendar, Slack and calls, keeps a pigeonhole for everyone you work with, and flags what's owed.</p>
+      <h1>you said you’d get back to them<span class="ellipsis" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr">…</span></h1>
+      <p class="lede">Ellipsa remembers every person and promise across your email, calendar, Slack and calls, and nudges you before anything slips.</p>
       <div class="actions">
-        <a class="btn" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
-        <a class="quiet" href="#mac">On a Mac? Join the waitlist</a>
+        <a class="pill" href="#get">Get the Windows beta</a>
+        <a class="quiet" href="#get">On a Mac? Join the waitlist</a>
       </div>
     </div>
+    <div class="home" aria-hidden="true"></div>
+  </section>
 
-    <aside class="reverse" aria-label="Example slips">
-      <div class="tabs" role="tablist" aria-label="Pick a slip">
-        <button role="tab" data-slip="dana" aria-selected="true">Dana</button>
-        <button role="tab" data-slip="priya" aria-selected="false">Priya</button>
-        <button role="tab" data-slip="marcus" aria-selected="false">Marcus</button>
-        <button role="tab" data-slip="lena" aria-selected="false">Lena</button>
-      </div>
-      <article class="slip" role="tabpanel" aria-live="polite" data-kind="promise">
-        <p class="stamp" data-field="status">You promised · due Fri</p>
-        <h2 data-field="title">Venue options for the offsite</h2>
-        <blockquote data-field="quote">“I'll send three venue options by Friday.”</blockquote>
-        <p class="src" data-field="source">You, in Gmail · Tue 6 Oct, 4:12 pm · thread “Offsite planning”</p>
-      </article>
-      <p class="note">Example people. Your rack fills from your own email, calendar and calls.</p>
-    </aside>
+  <section id="button" class="button-tour" data-mode="ellipsis" aria-labelledby="button-title">
+    <h2 id="button-title">it lives in one little button.</h2>
+    <p class="lede">A round button sits in the corner of your screen. Everything Ellipsa does starts there, and the dots tell you what it’s up to.</p>
+    <div class="moods" role="tablist" aria-label="What the dots mean">
+      <button role="tab" aria-selected="true" data-mood="ellipsis"><i class="mini" data-mood="ellipsis" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Tap it<span>Ask anything, by typing or out loud.</span></button>
+      <button role="tab" aria-selected="false" data-mood="listen"><i class="mini" data-mood="listen" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Hold it<span>It listens in on your call. The dots turn red, and the audio is never saved.</span></button>
+      <button role="tab" aria-selected="false" data-mood="list"><i class="mini" data-mood="list" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Swipe up<span>Your briefing: who’s waiting on you and what you promised.</span></button>
+      <button role="tab" aria-selected="false" data-mood="badge"><i class="mini" data-mood="badge" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Blue badge<span>Something is ready for you to approve. Nothing goes out until you do.</span></button>
+    </div>
   </section>
 
   <section id="day" class="day" aria-labelledby="day-title">
-    <h2 id="day-title" class="day-title">One day, sorted.</h2>
-    <div class="stop" data-stop="0">
-      <h3><time class="time">08:30</time> Your briefing</h3>
-      <p>Three people are waiting on a reply. You told Dana you'd send venue options by Friday. Ellipsa can read it to you while you make coffee.</p>
-    </div>
-    <div class="stop" data-stop="1">
-      <h3><time class="time">13:55</time> Before the call</h3>
-      <p>Last time, Priya asked for the Q3 numbers and you said you'd bring them. Her card shows what each of you promised.</p>
-    </div>
-    <div class="stop" data-stop="2">
-      <h3><time class="time">14:20</time> During it</h3>
-      <p>Ask out loud, “what did we agree on pricing?” The answer comes from your own records while you're still talking. No bot joins the call.</p>
-    </div>
-    <div class="stop" data-stop="3">
-      <h3><time class="time">16:10</time> After</h3>
-      <p>Your reply to Marcus is drafted in your own voice and the next call is booked in a free slot. Nothing is sent until you say so.</p>
+    <h2 id="day-title">one day, nothing dropped.</h2>
+    <div class="day-grid">
+      <ol class="moments">
+        <li data-mode="list" data-shot="0"><img class="inline-shot" src="shots/m-briefing.webp" width="720" height="448" alt="Ellipsa’s morning briefing" loading="lazy"><time>8:30</time><h3>Your briefing</h3><p>Marcus is waiting on a reply, and you told Dana you’d send venue options by Friday. It can read it to you while you make coffee.</p></li>
+        <li data-mode="face" data-shot="1"><img class="inline-shot" src="shots/m-person.webp" width="720" height="780" alt="A person card in Ellipsa" loading="lazy"><time>1:55</time><h3>Before the call</h3><p>Priya asked for the Q3 numbers last time, and you said you’d bring them. Her card shows what each of you promised.</p></li>
+        <li data-mode="listen" data-shot="2"><img class="inline-shot" src="shots/m-chat.webp" width="720" height="452" alt="Asking Ellipsa a question" loading="lazy"><time>2:20</time><h3>During it</h3><p>Ask out loud, “what did we agree on pricing?”, and the answer comes from your own records. No bot joins the call.</p></li>
+        <li data-mode="badge" data-shot="3"><img class="inline-shot" src="shots/m-draft.webp" width="720" height="706" alt="A follow-up drafted by Ellipsa" loading="lazy"><time>4:10</time><h3>After</h3><p>Your follow-up is drafted in your own voice and the next call is booked. It waits for your yes.</p></li>
+      </ol>
+      <figure class="stage">
+        <div class="screen">
+          <img src="shots/briefing.webp" alt="Ellipsa's morning briefing" data-shot="0" width="1440" height="1012" loading="lazy">
+          <img src="shots/person.webp" alt="A person card in Ellipsa" data-shot="1" width="1440" height="1012" loading="lazy">
+          <img src="shots/chat.webp" alt="Asking Ellipsa a question" data-shot="2" width="1440" height="1012" loading="lazy">
+          <img src="shots/draft.webp" alt="A follow-up drafted by Ellipsa" data-shot="3" width="1440" height="1012" loading="lazy">
+        </div>
+        <figcaption>The real app, with a demo account.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <div class="solid">
-    <section class="log" aria-labelledby="log-title">
-      <h2 id="log-title">Everything lands in the right slot.</h2>
-      <ol class="entries" role="list">
-        <li><span class="when">Day one</span><p>Reads the last 30 days of Gmail, Calendar, Slack, Notion and GitHub, so your first briefing already knows your people.</p></li>
-        <li><span class="when">Every morning</span><p>A briefing of who is waiting on you, what you promised and who you're meeting. It can read it aloud.</p></li>
-        <li><span class="when">Each person</span><p>A card with how you talk, what each side promised, and whether the relationship is going quiet.</p></li>
-        <li><span class="when">In calls</span><p>Answers from your memory while you talk, and the action items waiting when you hang up.</p></li>
-        <li><span class="when">Replies</span><p>Drafts in your voice and calls booked in your free slots. Anything only you can fill in is marked, and sending waits until it's done.</p></li>
-        <li><span class="when">Other AI apps</span><p>The same memory inside Claude, Cursor, VS Code and five more, through MCP.</p></li>
-      </ol>
-    </section>
+  <section class="chat" data-mode="ellipsis" aria-labelledby="chat-title">
+    <div class="chat-grid">
+    <div><h2 id="chat-title">ask it like you’d ask a colleague.</h2><p class="fine">Example conversation with demo people.</p></div>
+    <div class="thread" aria-label="Example conversation">
+      <p class="me">what did I promise Dana this week?</p>
+      <p class="it">Three venue options for the offsite, by Friday. You said it in Tuesday’s email.</p>
+      <p class="me">who haven’t I replied to?</p>
+      <p class="it">Marcus, about the contract, for 9 days. And Priya’s Q3 question.</p>
+      <p class="me">draft something to Marcus</p>
+      <p class="it">Done, in your voice. It’s waiting for you to read before it sends.</p>
+    </div>
+    </div>
+  </section>
 
-    <section id="privacy" class="privacy" aria-labelledby="privacy-title">
-      <h2 id="privacy-title">Your memory stays on your computer.</h2>
-      <div class="facts">
-        <p><strong>Encrypted on disk.</strong> Your memory is stored on your own computer, encrypted, with daily encrypted backups.</p>
-        <p><strong>You approve every action.</strong> Nothing is sent, booked, changed or deleted until you say yes.</p>
-        <p><strong>Calls stay yours.</strong> No bot joins the meeting, and call audio is never saved to disk.</p>
+  <section class="video" data-mode="face" aria-labelledby="video-title">
+    <h2 id="video-title">see it work.</h2>
+    <div class="player">
+      <video src="shots/demo.mp4" poster="shots/poster.webp" controls playsinline preload="none" width="1280" height="720"></video>
+    </div>
+  </section>
+
+  <section id="privacy" class="privacy" data-mode="face" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">it remembers. only for you.</h2>
+    <ul class="facts">
+      <li><strong>On your computer.</strong> Your memory is stored on your own computer, encrypted, with daily encrypted backups.</li>
+      <li><strong>Your yes first.</strong> Nothing is sent, booked, changed or deleted until you approve it.</li>
+      <li><strong>No bot in your calls.</strong> Nobody joins the meeting, and call audio is never saved to disk.</li>
+    </ul>
+    <p class="fine">To answer you, Ellipsa sends only what a question needs to OpenAI, through Ellipsa’s relay. The <a href="privacy.html">privacy policy</a> sets out exactly what goes where.</p>
+  </section>
+
+  <section class="apps" data-mode="ellipsis" aria-labelledby="apps-title">
+    <h2 id="apps-title">works with what you already use.</h2>
+    <ul class="logos" aria-label="Connected apps">
+      <li><img src="logos/gmail.svg" alt="Gmail" width="32" height="32"></li>
+      <li><img src="logos/googlecalendar.svg" alt="Google Calendar" width="32" height="32"></li>
+      <li><img src="logos/slack.svg" alt="Slack" width="32" height="32"></li>
+      <li><img src="logos/notion.svg" alt="Notion" width="32" height="32"></li>
+      <li><img src="logos/github.svg" alt="GitHub" width="32" height="32"></li>
+      <li><img src="logos/claude.svg" alt="Claude" width="32" height="32"></li>
+      <li><img src="logos/cursor.svg" alt="Cursor" width="32" height="32"></li>
+      <li><img src="logos/vscode.svg" alt="VS Code" width="32" height="32"></li>
+      <li><img src="logos/windsurf.svg" alt="Windsurf" width="32" height="32"></li>
+      <li><img src="logos/googlegemini.svg" alt="Gemini CLI" width="32" height="32"></li>
+    </ul>
+    <p class="fine">Several Google accounts at once. Your memory also works in Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Gemini CLI, Codex and LM Studio.</p>
+  </section>
+
+  <section id="get" class="get" data-mode="happy" aria-labelledby="get-title">
+    <div class="get-head"><h2 id="get-title">go on, give it something to remember.</h2><div class="home home-get" aria-hidden="true"></div></div>
+    <div class="ways">
+      <div class="win">
+        <h3>Windows 10 and 11</h3>
+        <p>Ellipsa is in a private beta. Ask for an invite and you’ll get the installer. Connect Google, and it reads your last 30 days, so your first briefing already knows your people.</p>
+        <a class="pill" href="mailto:husseinkhidr2@gmail.com?subject=Ellipsa%20Windows%20beta&amp;body=I'd%20like%20to%20try%20Ellipsa%20on%20Windows." data-download>Request the Windows beta</a>
+        <p class="fine">Windows may warn that the installer comes from an unknown publisher. Google sign-in is open to invited testers for now.</p>
       </div>
-      <p class="fine">To answer you, Ellipsa sends only what a question needs to OpenAI, through Ellipsa's relay. The <a href="privacy.html">privacy policy</a> sets out exactly what goes where.</p>
-    </section>
-
-    <section class="apps" aria-labelledby="apps-title">
-      <h2 id="apps-title">Works with what you already use.</h2>
-      <ul class="cells" aria-label="Connected apps">
-        <li><img src="logos/gmail.svg" alt="Gmail" width="40" height="40"></li>
-        <li><img src="logos/googlecalendar.svg" alt="Google Calendar" width="40" height="40"></li>
-        <li><img src="logos/slack.svg" alt="Slack" width="40" height="40"></li>
-        <li><img src="logos/notion.svg" alt="Notion" width="40" height="40"></li>
-        <li><img src="logos/github.svg" alt="GitHub" width="40" height="40"></li>
-        <li><img src="logos/claude.svg" alt="Claude" width="40" height="40"></li>
-        <li><img src="logos/cursor.svg" alt="Cursor" width="40" height="40"></li>
-        <li><img src="logos/vscode.svg" alt="VS Code" width="40" height="40"></li>
-        <li><img src="logos/windsurf.svg" alt="Windsurf" width="40" height="40"></li>
-        <li><img src="logos/googlegemini.svg" alt="Gemini CLI" width="40" height="40"></li>
-      </ul>
-      <p class="fine">Several Google accounts at once. Your memory also works in Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Gemini CLI, Codex and LM Studio.</p>
-    </section>
-
-    <section class="close" aria-labelledby="close-title">
-      <h2 id="close-title">Start with your last 30 days.</h2>
-      <div class="split">
-        <div class="win">
-          <p class="platform">Windows 10 and 11</p>
-          <p>Install, connect Google, and Ellipsa reads your last 30 days.</p>
-          <p class="beta">Ellipsa is in a private beta. Windows may warn that the installer comes from an unknown publisher, and Google sign-in is open to invited testers for now.</p>
-          <a class="btn" href="https://github.com/ellipsisisalreadytaken/ellipsisisalreadytaken.github.io/releases/latest/download/Ellipsa-Setup.exe" data-download>Download for Windows</a>
+      <form id="mac" class="mac" novalidate>
+        <h3>macOS</h3>
+        <p>The Mac app is next. Leave your email and we’ll write once, when it’s ready.</p>
+        <label for="email">Email</label>
+        <div class="row">
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="mac-msg">
+          <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="pill" type="submit">Join the Mac waitlist</button>
         </div>
-        <form id="mac" class="mac" novalidate>
-          <p class="platform">macOS</p>
-          <p>The Mac app is next. Leave your email and we'll write once, when it's ready.</p>
-          <label for="email">Email</label>
-          <div class="row">
-            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="mac-msg">
-            <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="btn" type="submit">Join the Mac waitlist</button>
-          </div>
-          <p id="mac-msg" class="msg" role="status"></p>
-        </form>
-      </div>
-    </section>
+        <p id="mac-msg" class="msg" role="status"></p>
+      </form>
+    </div>
+  </section>
 
-    <footer class="foot">
-      <p class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor"/><circle cx="10" cy="16" r="2" fill="#0E1426"/><circle cx="16" cy="16" r="2" fill="#0E1426"/><circle cx="22" cy="16" r="2" fill="#0E1426"/></svg><span>Ellipsa</span></p>
-      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></nav>
-      <p class="fine">© 2026 Ellipsa</p>
-    </footer>
-  </div>
+  <footer class="foot">
+    <a class="wordmark" href="./">ellipsa</a>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></nav>
+    <p class="fine">© 2026 Ellipsa</p>
+  </footer>
 </main>
 </body>
 </html>

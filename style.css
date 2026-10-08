@@ -1,31 +1,30 @@
-/* Privacy policy and terms: the post room's reading desk */
-@font-face { font-family: "Archivo"; src: url(fonts/archivo-latin.woff2) format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: "Archivo"; src: url(fonts/archivo-latin-ext.woff2) format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+/* Privacy policy and terms: Ellipsa's own monochrome, made for reading */
+@font-face { font-family: "Crimson Text"; src: url(fonts/crimson-italic-400.woff2) format("woff2"); font-style: italic; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url(fonts/inter-latin.woff2) format("woff2"); font-weight: 400 700; font-display: swap; }
 
-:root { color-scheme: dark; --bg: #0E1426; --fg: #E9ECEF; --muted: #A9B4CC; --line: #2A3A63; --accent: #D9A441; --panel: #121A31; }
+:root { color-scheme: light; --bg: #FFFFFF; --ink: #030213; --muted: #5E5E73; --line: #ECECF0; --panel: #F3F3F5; }
 * { box-sizing: border-box; }
-::selection { background: var(--accent); color: #2B1E04; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.7 "Archivo", system-ui, sans-serif; -webkit-font-smoothing: antialiased; scrollbar-color: var(--line) var(--bg); }
-main { max-width: 46rem; margin: 0 auto; padding: 40px 16px 96px; }
-nav { display: flex; gap: 24px; align-items: center; margin-bottom: 64px; font-size: 0.92rem; }
+::selection { background: var(--ink); color: #fff; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.7 "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+main { max-width: 44rem; margin: 0 auto; padding: 28px 16px 96px; }
+nav { display: flex; gap: 24px; align-items: center; margin-bottom: 72px; font-size: 0.92rem; }
 nav a { color: var(--muted); text-decoration: none; }
-nav a:first-child { color: var(--fg); font-weight: 700; font-stretch: 118%; font-size: 1.05rem; margin-right: auto; }
-nav a:hover, nav a[aria-current] { color: var(--fg); }
-nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.35em; }
-h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 740; font-stretch: 114%; line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 12px; }
-h2 { font-size: 1.3rem; font-weight: 700; font-stretch: 110%; letter-spacing: -0.01em; margin: 56px 0 12px; }
-p, li { color: var(--fg); }
+nav a:first-child { color: var(--ink); font: italic 400 1.75rem/1 "Crimson Text", Georgia, serif; text-transform: lowercase; margin-right: auto; }
+nav a:hover, nav a[aria-current] { color: var(--ink); }
+nav a[aria-current] { text-decoration: underline; text-underline-offset: 0.35em; }
+h1 { font: italic 400 clamp(2.6rem, 6vw, 3.8rem)/1 "Crimson Text", Georgia, serif; text-transform: lowercase; letter-spacing: -0.015em; margin: 0 0 14px; }
+h2 { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.01em; margin: 56px 0 12px; }
+p, li { color: var(--ink); max-width: 70ch; }
 ul { padding-left: 1.2em; }
 li { margin: 6px 0; }
-li::marker { color: var(--accent); }
+li::marker { color: var(--muted); }
 .lede { color: var(--muted); font-size: 1.15rem; margin-top: 0; }
 .meta { color: var(--muted); font-size: 0.9rem; }
-a { color: var(--fg); text-decoration-color: var(--accent); text-underline-offset: 0.2em; }
-a:hover { color: var(--accent); }
-strong { font-weight: 680; }
+a { color: var(--ink); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+strong { font-weight: 650; }
 footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
-.notice { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 14px 18px; color: var(--muted); font-size: 0.95rem; }
+.notice { background: var(--panel); border-radius: 16px; padding: 14px 18px; color: var(--muted); font-size: 0.95rem; }
 .caps { text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.01em; }
 table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 8px 0; font-variant-numeric: tabular-nums; }
 th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }

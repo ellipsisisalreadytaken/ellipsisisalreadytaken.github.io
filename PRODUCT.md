@@ -40,7 +40,8 @@ Organised around people and promises, not around what was on your screen or a si
 
 ## Brand Commitments
 
-- Name: Ellipsa. Mark: three dots inside a circle (an ellipsis).
+- Name: Ellipsa, written as a lowercase italic serif wordmark "ellipsa" (Crimson Text). Mark: three dots inside a round grey button (an ellipsis), the same as the app's floating button.
+- Colours: the app's monochrome (white, ink #030213, greys #ECECF0 / #717182), red #EF4444 only for listening, blue #2563EB only for the pending-actions badge. Founder pinned these for the website on 8 Oct 2026, with a bouncy animated feel and an ellipsis mascot.
 - Voice: plain, specific, calm; concrete moments over adjectives.
 - The site must keep links to the Privacy Policy and Terms (privacy.html, terms.html), which Google, Slack and Notion app reviews rely on.
 - Contact email: husseinkhidr2@gmail.com.
