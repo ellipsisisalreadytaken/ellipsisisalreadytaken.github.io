@@ -10,45 +10,86 @@
 <main>
   <nav><a href="./">Ellipsa</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: October 3, 2026</p>
+  <p class="meta">Last updated: October 8, 2026</p>
 
-  <p>Ellipsa is a desktop assistant that runs on your own computer. This policy explains what information it uses, where that information is kept, and the choices you have.</p>
+  <p>Ellipsa is a desktop assistant that runs on your own computer. This policy explains what information Ellipsa uses, where it is kept, who it is shared with, and the choices you have. In this policy, "we" and "us" mean the developer of Ellipsa, and "you" means the person using it.</p>
 
-  <h2>Information Ellipsa uses</h2>
+  <h2>1. The short version</h2>
   <ul>
-    <li><strong>Google account information.</strong> Your name, email address and profile picture, used to identify your account inside the app.</li>
-    <li><strong>Gmail.</strong> Message contents and metadata, used to summarise your inbox, find emails that need a reply, prepare draft replies, send email you approve, and apply labels.</li>
-    <li><strong>Google Calendar.</strong> Your events, used to show your schedule in your briefing and to create or update events you approve.</li>
-    <li><strong>Activity you choose to share.</strong> Depending on your settings: the active window title, screenshots, clipboard text and meeting audio you record. Each of these can be turned off in Settings, and specific apps and websites can be excluded.</li>
+    <li>Your memory (the people, conversations, events, tasks and drafts Ellipsa builds up) is stored on your own computer, not on our servers.</li>
+    <li>To understand and write text, Ellipsa sends the relevant pieces to OpenAI through a small relay we run. The relay passes requests through and does not store their contents.</li>
+    <li>We do not sell your information, use it for advertising, or use it to train AI models.</li>
+    <li>You decide what to connect and what Ellipsa observes, and you can delete everything at any time.</li>
   </ul>
 
-  <h2>Where information is stored</h2>
-  <p>Ellipsa stores its memory (events, people, tasks and drafts) in databases on your own computer. Your Google sign-in tokens are also stored on your computer. Ellipsa does not run a server that collects your data.</p>
+  <h2>2. Information Ellipsa uses</h2>
+  <p><strong>Account information.</strong> When you sign in with Google, Ellipsa receives your name, email address and profile picture. Your email address is also used to confirm that you are an invited tester.</p>
 
-  <h2>Processing by AI services</h2>
-  <p>To summarise, extract tasks and draft replies, Ellipsa sends the relevant text (for example, an email you received or a meeting transcript) to OpenAI's API for processing. Under OpenAI's API terms, this data is not used to train their models. Nothing is sent to any other third party.</p>
+  <p><strong>Services you connect.</strong> Ellipsa only reads a service after you connect it. Depending on what you connect:</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Service</th><th>What Ellipsa reads</th><th>What Ellipsa can do, with your approval</th></tr>
+    <tr><td>Gmail</td><td>Messages and their metadata (senders, recipients, subjects, dates, labels)</td><td>Create drafts, send email, apply labels</td></tr>
+    <tr><td>Google Calendar</td><td>Your events and their attendees, and when you are free or busy</td><td>Create and update events, including sending invitations</td></tr>
+    <tr><td>Slack</td><td>Messages in the direct messages, group messages and channels you belong to, and the names and email addresses of members</td><td>Post messages</td></tr>
+    <tr><td>Notion</td><td>Only the pages you choose to share with Ellipsa when you connect, and who edited them</td><td>Create and update pages, if you grant that</td></tr>
+    <tr><td>GitHub</td><td>Issues, pull requests and comments you are involved in, and the people on them</td><td>Create issues and comments</td></tr>
+  </table>
+  </div>
 
-  <h2>Use of Google user data</h2>
-  <p>Ellipsa's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically:</p>
+  <p><strong>Activity on your computer.</strong> Depending on your settings, Ellipsa can observe the name of the app and window you are using, text visible on your screen (read on your computer), your clipboard, and audio from your microphone and computer during sessions you start. Each of these can be turned off in Settings, and specific apps and websites can be excluded.</p>
+
+  <p><strong>What you tell Ellipsa.</strong> Your chats with Ellipsa, people you add, notes, decisions and settings.</p>
+
+  <p><strong>Information about other people.</strong> Your email, calendar, messages and meetings naturally include information about other people, such as their names, email addresses and what they wrote or said. Ellipsa uses it only to help you, and you are responsible for having the right to share it with Ellipsa (see the <a href="terms.html">Terms of Service</a>).</p>
+
+  <h2>3. How the information is used</h2>
+  <p>Only to provide Ellipsa's features to you: building your memory of people and work, briefings, reminders and open loops, answering your questions, drafting emails and messages, scheduling, and the actions you approve. We do not use it for advertising, profiling for anyone else, or any unrelated purpose.</p>
+
+  <h2>4. Where information is stored</h2>
+  <p>Ellipsa's memory and the sign-in tokens for the services you connect are stored on your computer, in your user profile. We do not keep a copy. Anyone with access to your computer account may be able to access that data, so keep your computer secured.</p>
+
+  <h2>5. Who information is shared with</h2>
+  <p><strong>OpenAI.</strong> To summarise, extract tasks, answer questions, transcribe audio, draft text and speak answers aloud, Ellipsa sends the relevant content (for example an email, part of a conversation, screen text or a short stretch of audio) to OpenAI's API. Under OpenAI's API terms, this data is not used to train their models. OpenAI may keep it for up to 30 days to detect abuse, and then deletes it, unless the law requires otherwise. See <a href="https://openai.com/policies/privacy-policy">OpenAI's privacy policy</a>.</p>
+  <p><strong>Our relay.</strong> Requests to OpenAI pass through a relay we run on Cloudflare, so that Ellipsa does not need to carry an OpenAI key. The relay checks that you are an invited tester and counts how many requests each tester makes per day, to limit costs. These counts are tied to your email address and are deleted automatically after two days. The relay does not store the contents of requests or answers. Cloudflare may keep standard technical logs as described in <a href="https://www.cloudflare.com/privacypolicy/">its privacy policy</a>.</p>
+  <p><strong>The services you connect.</strong> When you approve an action, the content goes to that service (for example, an email you send goes through Gmail to its recipients).</p>
+  <p><strong>Nobody else.</strong> We do not sell, rent or share your information with anyone else, except if required by law, or to protect against fraud or a security threat.</p>
+
+  <h2>6. Google user data</h2>
+  <p>Ellipsa's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. In particular:</p>
   <ul>
-    <li>Google user data is used only to provide the features you see in Ellipsa.</li>
-    <li>It is not sold, and it is not used for advertising.</li>
-    <li>It is not transferred to anyone, except to the AI processing service described above as needed to provide those features, or if required by law.</li>
-    <li>No person reads your data. The only exception is if you explicitly ask for help with a problem and give permission.</li>
-    <li>Google user data is not used to train general AI or machine-learning models.</li>
+    <li>Google user data is used only to provide and improve the features you use in Ellipsa.</li>
+    <li>It is not transferred to anyone except OpenAI, as described above, when needed to provide those features, or when required by law.</li>
+    <li>It is not used for advertising, sold, or used to determine creditworthiness or for lending.</li>
+    <li>No person reads it, unless you give us permission for a specific message (for example when asking for help), it is needed for security, or the law requires it.</li>
+    <li>It is not used to develop, improve or train general AI or machine-learning models.</li>
+  </ul>
+  <p>Slack, Notion and GitHub data is handled the same way.</p>
+
+  <h2>7. Retention and deletion</h2>
+  <ul>
+    <li>Ellipsa keeps information on your computer for the periods you choose in Settings, and deletes it after that.</li>
+    <li>Settings → Delete all data permanently removes everything Ellipsa has stored. Uninstalling the app does not remove it on its own, so use that first.</li>
+    <li>You can disconnect any service in Settings, and revoke access from the service itself: <a href="https://myaccount.google.com/permissions">Google</a>, Slack (your workspace's app settings), Notion (Settings → Connections) and <a href="https://github.com/settings/applications">GitHub</a>. Disconnecting stops new access but does not delete what is already stored on your computer.</li>
   </ul>
 
-  <h2>Retention and deletion</h2>
-  <p>Ellipsa keeps information according to the retention periods you choose in Settings. You can delete all stored data at any time with Settings → Delete all data. You can revoke Ellipsa's access to your Google account at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Revoking access stops further access but does not delete data already stored on your computer.</p>
+  <h2>8. Security</h2>
+  <p>Connections to Google, Slack, Notion, GitHub, OpenAI and our relay are encrypted. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
 
-  <h2>Children</h2>
-  <p>Ellipsa is not intended for anyone under 16.</p>
+  <h2>9. Your rights</h2>
+  <p>Because your data is stored on your computer, you can see, export, correct and delete it directly in Ellipsa. Depending on where you live, you may have further rights over your personal information, such as access, correction, deletion and objection. To use them, or to ask anything about the little we hold (your tester email and the daily request counts), contact us at the address below.</p>
 
-  <h2>Changes</h2>
-  <p>If this policy changes, the updated version will be posted on this page with a new date.</p>
+  <h2>10. Children</h2>
+  <p>Ellipsa is not intended for anyone under 18, and we do not knowingly collect information from children.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></p>
+  <h2>11. International use</h2>
+  <p>OpenAI and Cloudflare may process information in the United States and other countries, which may have different data protection laws from yours.</p>
+
+  <h2>12. Changes</h2>
+  <p>We may update this policy. The current version will always be on this page with its date, and for significant changes we will let testers know before they take effect.</p>
+
+  <h2>13. Contact</h2>
+  <p><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></p>
 
   <footer><a href="./">Ellipsa</a> · <a href="terms.html">Terms of Service</a></footer>
 </main>
