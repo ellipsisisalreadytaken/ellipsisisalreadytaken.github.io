@@ -119,6 +119,9 @@
     badge: 'your reply to Marcus is ready for a look.',
     face: 'Priya asked for the Q3 numbers last time.',
     privacy: 'what you tell me stays on your computer.',
+    calls: 'shh, i’m listening. no bot, no recording.',
+    inbox: 'swept 23 newsletters before you woke up.',
+    acts: 'say the word and it’s done.',
     apps: 'i read these. carefully.',
     happy: 'yay! go on, try me.',
   };
@@ -301,7 +304,8 @@
         continue;
       }
       if (el.classList.contains('hero')) { if (started) setMode('face'); continue; }
-      const line = el.id === 'privacy' ? LINES.privacy : el.classList.contains('apps') ? LINES.apps : el.id === 'get' ? LINES.happy : '';
+      const line = el.id === 'privacy' ? LINES.privacy : el.id === 'calls' ? LINES.calls : el.id === 'inbox' ? LINES.inbox : el.id === 'acts' ? LINES.acts
+        : el.classList.contains('apps') ? LINES.apps : el.id === 'get' ? LINES.happy : '';
       setMode(el.dataset.mode, line);
     }
   }, { rootMargin: '-45% 0px -45% 0px' });
@@ -310,7 +314,7 @@
 
   // ---------- Things that pop in, and the conversation ----------
   if (!reduce) {
-    const pops = $$('main section h2, .button-tour .lede, .moods, .facts li, .logos, .ways > *, .player, .stage');
+    const pops = $$('main section h2, .button-tour .lede, .moods, .facts li, .logos, .ways > *, .player, .stage, .call-steps li, .inbox-shot, .inbox-facts li, .act-list li');
     pops.forEach(p => p.classList.add('pop'));
     const popper = new IntersectionObserver(entries => entries.forEach(e => {
       if (!e.isIntersecting) return;
