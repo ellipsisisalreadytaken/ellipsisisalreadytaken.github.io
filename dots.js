@@ -84,7 +84,7 @@
       case 'happy': {
         const jump = reduce ? 0 : Math.max(0, Math.sin(now * 5 - i * 0.6)) * 0.08;
         if (i < 2) return { x: 0.37 + i * 0.26 + lx * 0.05, y: 0.42 - jump + ly * 0.05, sx: 1.05, sy: Math.max(0.12, blink) * 1.05, red: false };
-        return { x: 0.5 + lx * 0.03, y: 0.635 - jump * 0.6, sx: 1.6, sy: 1.15, red: false };
+        return { x: 0.5 + lx * 0.03, y: 0.635 - jump * 0.6, sx: 2.3, sy: 0.62, red: false };
       }
       default: { // face, and badge (a face with the blue badge)
         if (i < 2) return { x: 0.37 + i * 0.26 + lx * 0.06, y: 0.43 + ly * 0.06, sx: 1, sy: Math.max(0.12, blink), red: false };
