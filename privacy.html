@@ -11,7 +11,7 @@
 <main>
   <nav><a href="./">Ellipsa</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: October 8, 2026</p>
+  <p class="meta">Last updated: October 10, 2026</p>
 
   <p>Ellipsa is a desktop assistant that runs on your own computer. This policy explains what information Ellipsa uses, where it is kept, who it is shared with, and the choices you have. In this policy, "we" and "us" mean the developer of Ellipsa, and "you" means the person using it.</p>
 
@@ -39,6 +39,7 @@
   </div>
 
   <p><strong>Activity on your computer.</strong> Depending on your settings, Ellipsa can observe the name of the app and window you are using, text visible on your screen (read on your computer), your clipboard, and audio from your microphone and computer during sessions you start. Each of these can be turned off in Settings, and specific apps and websites can be excluded.</p>
+  <p><strong>Meetings.</strong> During a session you start, your microphone and your computer's audio are transcribed separately, so the transcript shows what you said and what others said. Unless you turn off "Name each speaker" in Settings, the computer's audio (or, when there is none, the microphone's) is also written to your computer, encrypted with a key used for that session only, until the meeting notes are written. It is then sent once to OpenAI to tell the voices apart, and deleted. If that cannot finish, it is deleted within a day. For a one-to-one call with a calendar invite, nothing is sent: the other person is named from the invite. The transcript and notes are kept in your memory like any other conversation.</p>
 
   <p><strong>What you tell Ellipsa.</strong> Your chats with Ellipsa, people you add, notes, decisions and settings.</p>
 
@@ -51,9 +52,9 @@
   <p>Ellipsa's memory and the sign-in tokens for the services you connect are stored on your computer, in your user profile. We do not keep a copy. Anyone with access to your computer account may be able to access that data, so keep your computer secured.</p>
 
   <h2>5. Who information is shared with</h2>
-  <p><strong>OpenAI.</strong> To summarise, extract tasks, answer questions, transcribe audio, draft text and speak answers aloud, Ellipsa sends the relevant content (for example an email, part of a conversation, screen text or a short stretch of audio) to OpenAI's API. Under OpenAI's API terms, this data is not used to train their models. OpenAI may keep it for up to 30 days to detect abuse, and then deletes it, unless the law requires otherwise. See <a href="https://openai.com/policies/privacy-policy">OpenAI's privacy policy</a>.</p>
+  <p><strong>OpenAI.</strong> To summarise, extract tasks, answer questions, transcribe audio, draft text and speak answers aloud, Ellipsa sends the relevant content (for example an email, part of a conversation, screen text, a short stretch of audio, or the recording of a meeting to tell its speakers apart) to OpenAI's API. Under OpenAI's API terms, this data is not used to train their models. OpenAI may keep it for up to 30 days to detect abuse, and then deletes it, unless the law requires otherwise. See <a href="https://openai.com/policies/privacy-policy">OpenAI's privacy policy</a>.</p>
   <p><strong>Our relay.</strong> Requests to OpenAI pass through a relay we run on Cloudflare, so that Ellipsa does not need to carry an OpenAI key. The relay checks that you are an invited tester and counts how many requests each tester makes per day, to limit costs. These counts are tied to your email address and are deleted automatically after two days. The relay does not store the contents of requests or answers. Cloudflare may keep standard technical logs as described in <a href="https://www.cloudflare.com/privacypolicy/">its privacy policy</a>.</p>
-  <p><strong>Usage and cost statistics.</strong> The relay also records, per tester and per day, how many AI requests were made and how many tokens each model used, so we can see what Ellipsa costs to run. Unless you turn off "Help improve Ellipsa" in Settings, the app also sends anonymous usage events: which screens and features are used, how far setup gets, and errors (their type and a short message with email addresses, user names, links and long numbers removed). These never include your content: no messages, emails, names, titles, files or screen text. Both are stored in a Cloudflare database under a pseudonym derived from your account (not your email address), and are used only to improve Ellipsa.</p>
+  <p><strong>Usage and cost statistics.</strong> The relay also records, per tester, per day and per feature (for example meeting notes, live answers or chat), how many AI requests were made, how many tokens, seconds of audio, characters of speech and web searches each model used, and what they cost, so we can see what Ellipsa costs to run. Live transcription goes from the app straight to OpenAI, so the app reports the totals OpenAI gives it for each session (numbers only, never audio or text) to the relay. Unless you turn off "Help improve Ellipsa" in Settings, the app also sends anonymous usage events: which screens and features are used, how far setup gets, and errors (their type and a short message with email addresses, user names, links and long numbers removed). These never include your content: no messages, emails, names, titles, files or screen text. Both are stored in a Cloudflare database under a pseudonym derived from your account (not your email address), and are used only to improve Ellipsa.</p>
   <p><strong>The Mac waitlist.</strong> If you join the waitlist on our website, we store the email address you enter, the platform you asked for and the date, in the same Cloudflare database. We use it only to email you when that version of Ellipsa is available, and we delete it on request.</p>
   <p><strong>The services you connect.</strong> When you approve an action, the content goes to that service (for example, an email you send goes through Gmail to its recipients).</p>
   <p><strong>Nobody else.</strong> We do not sell, rent or share your information with anyone else, except if required by law, or to protect against fraud or a security threat.</p>
@@ -67,7 +68,7 @@
     <li>No person reads it, unless you give us permission for a specific message (for example when asking for help), it is needed for security, or the law requires it.</li>
     <li>It is not used to develop, improve or train general AI or machine-learning models.</li>
   </ul>
-  <p>Slack, Notion and GitHub data is handled the same way.</p>
+  <p>Slack, Notion, GitHub, Linear and ClickUp data is handled the same way. Linear and ClickUp are connected with a personal API key you paste in Settings; it is stored on your computer like the other sign-ins.</p>
 
   <h2>7. Retention and deletion</h2>
   <ul>
@@ -78,7 +79,7 @@
   </ul>
 
   <h2>8. Security</h2>
-  <p>Connections to Google, Slack, Notion, GitHub, OpenAI and our relay are encrypted. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
+  <p>Connections to Google, Slack, Notion, GitHub, Linear, ClickUp, OpenAI and our relay are encrypted. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
 
   <h2>9. Your rights</h2>
   <p>Because your data is stored on your computer, you can see, export, correct and delete it directly in Ellipsa. Depending on where you live, you may have further rights over your personal information, such as access, correction, deletion and objection. To use them, or to ask anything about the little we hold (your tester email and the daily request counts), contact us at the address below.</p>
