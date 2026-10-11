@@ -7,8 +7,8 @@
 <meta name="description" content="Ellipsa remembers every person and promise across your email, calendar, Slack and calls, and nudges you before anything slips.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/crimson-italic-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 <script>document.documentElement.classList.remove("no-js")</script>
 <script src="dots.js" defer></script>
@@ -53,9 +53,9 @@
     <p class="lede">A round button sits in the corner of your screen. Everything Ellipsa does starts there, and the dots tell you what it’s up to.</p>
     <div class="moods" role="tablist" aria-label="What the dots mean">
       <button role="tab" aria-selected="true" data-mood="ellipsis"><i class="mini" data-mood="ellipsis" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Tap it<span>Ask anything, by typing or out loud.</span></button>
-      <button role="tab" aria-selected="false" data-mood="listen"><i class="mini" data-mood="listen" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Hold it<span>It listens in on your call. The dots turn red; the audio is kept, encrypted, only until your notes are written.</span></button>
+      <button role="tab" aria-selected="false" data-mood="listen"><i class="mini" data-mood="listen" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Hold it<span>A ring traces the edge, then it listens in on your call and the dots turn red. The audio is kept, encrypted, only until your notes are written.</span></button>
       <button role="tab" aria-selected="false" data-mood="list"><i class="mini" data-mood="list" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Swipe up<span>Your briefing: who’s waiting on you and what you promised.</span></button>
-      <button role="tab" aria-selected="false" data-mood="badge"><i class="mini" data-mood="badge" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Blue badge<span>Something is ready for you to approve. Nothing goes out until you do.</span></button>
+      <button role="tab" aria-selected="false" data-mood="badge"><i class="mini" data-mood="badge" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Blue badge<span>Something waits for your yes, or a to-do is due. Nothing goes out until you approve it.</span></button>
     </div>
   </section>
 
@@ -81,7 +81,7 @@
 
   <section id="calls" class="calls" data-mode="listen" aria-labelledby="calls-title">
     <h2 id="calls-title">it sits in on your calls. nobody else does.</h2>
-    <p class="lede">Hold the button and Ellipsa listens to the call on your own computer. No bot joins, and the dots turn red so you always know.</p>
+    <p class="lede">Hold the button and Ellipsa listens to the call on your own computer. No bot joins, and the dots turn red so you always know. It’s everything your notetaker does, plus your memory.</p>
     <ol class="call-steps">
       <li>
         <figure><img src="shots/observe-live.webp" alt="Ellipsa answering a question in the middle of a call; its button shows red listening bars" width="1440" height="1012" loading="lazy"></figure>
@@ -89,12 +89,12 @@
         <p>“What did we agree on pricing?” The answer comes from your own email, notes and past calls while you’re still talking.</p>
       </li>
       <li>
-        <figure><img src="shots/observe-review.webp" alt="The meeting review Ellipsa shows when the call ends" width="1440" height="1012" loading="lazy"></figure>
+        <figure><img src="shots/notes.webp" alt="Meeting notes Ellipsa wrote after a call: a summary, action items with owners and dates, and decisions" width="1440" height="1012" loading="lazy"></figure>
         <h3>Hang up. It’s all written down.</h3>
-        <p>A summary and the next steps you each promised, ready to turn into tasks with one click.</p>
+        <p>The full transcript, who said what, and notes topic by topic: decisions, action items with owners and dates, open questions. Names come from the invite or the people on your screen. Email the notes to everyone on the call in one click.</p>
       </li>
     </ol>
-    <p class="fine">Call audio is streamed for transcription. To name who said what, it is kept encrypted on your computer until your notes are written, then deleted.</p>
+    <p class="fine">Call audio is streamed for transcription. To name who said what, it is kept encrypted on your computer until your notes are written, then deleted. No headphones? It tells your voice from the call coming out of your speakers.</p>
   </section>
 
   <section id="inbox" class="inbox" data-mode="happy" aria-labelledby="inbox-title">
@@ -103,9 +103,10 @@
         <h2 id="inbox-title">inbox zero, everywhere you talk.</h2>
         <p class="lede">Newsletters, promotions and notifications are cleared out of your inbox on their own, labelled so nothing is lost. What’s left is what needs you: Gmail, Slack and GitHub, in one short list.</p>
         <ul class="inbox-facts">
-          <li><strong>Noise, gone.</strong> Archived and marked read, never deleted. One click puts it back.</li>
+          <li><strong>Noise, gone.</strong> Archived and marked read within minutes, never deleted. One click puts it back.</li>
+          <li><strong>Alerts stay.</strong> Failed builds, security alerts, sign-in codes and declined payments stay in your inbox.</li>
           <li><strong>People, never touched.</strong> Mail from a person always stays where it is.</li>
-          <li><strong>One list.</strong> Unanswered email, Slack messages waiting on you, reviews you were asked for.</li>
+          <li><strong>One list.</strong> Unanswered email, Slack messages waiting on you, reviews you were asked for. Reply, follow up, or mark it read without replying.</li>
         </ul>
       </div>
       <figure class="inbox-shot"><img src="shots/inbox.webp" alt="Ellipsa's briefing showing the tidied inbox and what's waiting on you" width="1440" height="1012" loading="lazy"></figure>
@@ -121,8 +122,10 @@
       <li><img src="logos/slack.svg" alt="" width="28" height="28"><span>Slack messages and replies</span></li>
       <li><img src="logos/notion.svg" alt="" width="28" height="28"><span>Notion pages and database entries</span></li>
       <li><img src="logos/github.svg" alt="" width="28" height="28"><span>GitHub issues, comments and pull requests</span></li>
+      <li><img src="logos/googledocs.svg" alt="" width="28" height="28"><span>Google Docs and Sheets, written for you</span></li>
     </ul>
-    <p class="fine">Approve once with “always allow” and it stops asking for that kind of thing. You can take it back any time in Settings.</p>
+    <figure class="acts-shot"><img src="shots/actions.webp" alt="Ellipsa's Actions: an email waiting for approval, and to-dos from a call" width="1440" height="1012" loading="lazy"></figure>
+    <p class="fine">Every action item you’re given lands in one list, the late ones first. Approve once with “always allow” and it stops asking for that kind of thing. You can take it back any time in Settings.</p>
   </section>
 
   <section class="chat" data-mode="ellipsis" aria-labelledby="chat-title">

@@ -1,19 +1,19 @@
 /* Privacy policy and terms: Ellipsa's own monochrome, made for reading */
-@font-face { font-family: "Crimson Text"; src: url(fonts/crimson-italic-400.woff2) format("woff2"); font-style: italic; font-weight: 400; font-display: swap; }
-@font-face { font-family: "Inter"; src: url(fonts/inter-latin.woff2) format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Instrument Serif"; src: url(fonts/instrument-serif-italic.woff2) format("woff2"); font-style: italic; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url(fonts/instrument-sans-latin.woff2) format("woff2"); font-weight: 400 700; font-display: swap; }
 
 :root { color-scheme: light; --bg: #FFFFFF; --ink: #030213; --muted: #5E5E73; --line: #ECECF0; --panel: #F3F3F5; }
 * { box-sizing: border-box; }
 ::selection { background: var(--ink); color: #fff; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.7 "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.7 "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 main { max-width: 44rem; margin: 0 auto; padding: 28px 16px 96px; }
 nav { display: flex; gap: 24px; align-items: center; margin-bottom: 72px; font-size: 0.92rem; }
 nav a { color: var(--muted); text-decoration: none; }
-nav a:first-child { color: var(--ink); font: italic 400 1.75rem/1 "Crimson Text", Georgia, serif; text-transform: lowercase; margin-right: auto; }
+nav a:first-child { color: var(--ink); font: italic 400 1.75rem/1 "Instrument Serif", Georgia, serif; text-transform: lowercase; margin-right: auto; }
 nav a:hover, nav a[aria-current] { color: var(--ink); }
 nav a[aria-current] { text-decoration: underline; text-underline-offset: 0.35em; }
-h1 { font: italic 400 clamp(2.6rem, 6vw, 3.8rem)/1 "Crimson Text", Georgia, serif; text-transform: lowercase; letter-spacing: -0.015em; margin: 0 0 14px; }
+h1 { font: italic 400 clamp(2.6rem, 6vw, 3.8rem)/1 "Instrument Serif", Georgia, serif; text-transform: lowercase; letter-spacing: -0.015em; margin: 0 0 14px; }
 h2 { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.01em; margin: 56px 0 12px; }
 p, li { color: var(--ink); max-width: 70ch; }
 ul { padding-left: 1.2em; }

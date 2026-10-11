@@ -16,50 +16,50 @@ colors:
   badge-blue: "#2563EB"
 typography:
   display:
-    fontFamily: "Crimson Text, Georgia, serif"
+    fontFamily: "Instrument Serif, Georgia, serif"
     fontSize: "clamp(3rem, 6vw, 5.6rem)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.015em"
   headline:
-    fontFamily: "Crimson Text, Georgia, serif"
+    fontFamily: "Instrument Serif, Georgia, serif"
     fontSize: "clamp(2.4rem, 5vw, 4.4rem)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.015em"
   title:
-    fontFamily: "Crimson Text, Georgia, serif"
+    fontFamily: "Instrument Serif, Georgia, serif"
     fontSize: "2rem"
     fontWeight: 400
     lineHeight: 1.05
   wordmark:
-    fontFamily: "Crimson Text, Georgia, serif"
+    fontFamily: "Instrument Serif, Georgia, serif"
     fontSize: "1.75rem"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.01em"
   subhead:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
     fontSize: "1.15rem"
     fontWeight: 600
     letterSpacing: "-0.01em"
   lede:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
     fontSize: "clamp(1.08rem, 1.5vw, 1.3rem)"
     fontWeight: 400
     lineHeight: 1.5
   body:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
     fontSize: "0.98rem"
     fontWeight: 600
     lineHeight: 1
   fine:
-    fontFamily: "Inter, system-ui, sans-serif"
+    fontFamily: "Instrument Sans, system-ui, sans-serif"
     fontSize: "0.9rem"
     fontWeight: 400
     lineHeight: 1.6
@@ -169,13 +169,13 @@ components:
 
 The whole site is the app's floating button, grown up and given room to play. A grey pebble holds three ink dots, and those dots are the brand's only character: they bounce like a typing indicator when Ellipsa is thinking, gather into two eyes and a mouth when it speaks, stretch into red bars when it listens, line up to read a briefing, and wait under a blue badge when something needs your yes. Everything else on the page stays quiet so the dots can carry the personality.
 
-The ground is white and the palette is the app's own monochrome: one near-black ink, a short ladder of cool greys, and two signal colours that each mean exactly one thing. Type pairs a lowercase italic serif (Crimson Text) for the wordmark and every display sentence with Inter for everything you read or press. Shapes are soft and round: pills, pebbles, 18 to 28px corners. Motion is springs, not tweens: things arrive with a small overshoot, presses squash, and the dots squash and stretch with their own speed.
+The ground is white and the palette is the app's own monochrome: one near-black ink, a short ladder of cool greys, and two signal colours that each mean exactly one thing. Type pairs a lowercase italic serif (Instrument Serif) for the wordmark and every display sentence with Inter for everything you read or press. Shapes are soft and round: pills, pebbles, 18 to 28px corners. Motion is springs, not tweens: things arrive with a small overshoot, presses squash, and the dots squash and stretch with their own speed.
 
 Density is generous and editorial. Each section is one lowercase sentence at headline size, one muted lede, and one piece of evidence: a real screenshot, a conversation, a set of facts. The world refuses the dark AI-gradient hero and the earlier skeuomorphic "post room" (navy rack, brass, Archivo); neither belongs here.
 
 **Key Characteristics:**
 - White ground, ink #030213, cool greys; red and blue reserved for one meaning each.
-- Lowercase italic Crimson Text sentences as headlines; Inter for body and controls.
+- Lowercase italic Instrument Serif sentences as headlines: Instrument Sans for body and controls.
 - The pebble-and-three-dots mascot as the single character, drawn live by script.
 - Pills and round forms everywhere; no sharp corners on interactive surfaces.
 - Spring motion with overshoot, squash on press, staggered three-beat rhythms.
@@ -208,26 +208,26 @@ A monochrome of white, one blue-black ink and cool greys, with two tiny signal c
 
 ## Typography
 
-**Display Font:** Crimson Text, italic only, weight 400 (with Georgia, serif)
-**Body Font:** Inter, variable 400 to 700 (with system-ui, sans-serif)
+**Display Font:** Instrument Serif, italic only, weight 400 (with Georgia, serif)
+**Body Font:** Instrument Sans, variable 400 to 700 (with system-ui, sans-serif)
 
 **Character:** A soft, handwritten-feeling italic serif speaks the brand's sentences; a neutral grotesque does the work. The serif is always the voice and never the interface.
 
 ### Hierarchy
-- **Display** (Crimson Text italic 400, clamp(3rem, 6vw, 5.6rem), line-height 1.02, -0.015em): The hero sentence only, max 13ch, ending in the live ellipsis.
-- **Headline** (Crimson Text italic 400, clamp(2.4rem, 5vw, 4.4rem), line-height 1.02): One per section, max 16ch, a lowercase sentence with a period.
-- **Title** (Crimson Text italic 400, 1.75 to 2.6rem, line-height 1.05 to 1.1): Moment names in the day, privacy promises, the download cards' platform names.
-- **Wordmark** (Crimson Text italic 400, 1.75rem, line-height 1, -0.01em): "ellipsa", lowercase, in the bar and footer.
-- **Subhead** (Inter 600, 1.15rem, -0.01em): Sans h3 and mood-tile names (1.15rem/1.2).
-- **Lede** (Inter 400, clamp(1.08rem, 1.5vw, 1.3rem), line-height 1.5, Slate Muted): One muted sentence under a headline, 34 to 46ch.
-- **Body** (Inter 400, 1.0625rem, line-height 1.6): Running text, 36 to 40ch in cards and moments; legal pages run 70ch at line-height 1.7.
-- **Label** (Inter 600, 0.98rem, line-height 1): Pill buttons; 0.85rem in the small pill and time chip, with tabular numerals for times.
-- **Fine** (Inter 400, 0.9rem, Slate Muted): Disclosures and captions, max 62ch.
+- **Display** (Instrument Serif italic 400, clamp(3rem, 6vw, 5.6rem), line-height 1.02, -0.015em): The hero sentence only, max 13ch, ending in the live ellipsis.
+- **Headline** (Instrument Serif italic 400, clamp(2.4rem, 5vw, 4.4rem), line-height 1.02): One per section, max 16ch, a lowercase sentence with a period.
+- **Title** (Instrument Serif italic 400, 1.75 to 2.6rem, line-height 1.05 to 1.1): Moment names in the day, privacy promises, the download cards' platform names.
+- **Wordmark** (Instrument Serif italic 400, 1.75rem, line-height 1, -0.01em): "ellipsa", lowercase, in the bar and footer.
+- **Subhead** (Instrument Sans 600, 1.15rem, -0.01em): Sans h3 and mood-tile names (1.15rem/1.2).
+- **Lede** (Instrument Sans 400, clamp(1.08rem, 1.5vw, 1.3rem), line-height 1.5, Slate Muted): One muted sentence under a headline, 34 to 46ch.
+- **Body** (Instrument Sans 400, 1.0625rem, line-height 1.6): Running text, 36 to 40ch in cards and moments; legal pages run 70ch at line-height 1.7.
+- **Label** (Instrument Sans 600, 0.98rem, line-height 1): Pill buttons; 0.85rem in the small pill and time chip, with tabular numerals for times.
+- **Fine** (Instrument Sans 400, 0.9rem, Slate Muted): Disclosures and captions, max 62ch.
 
 ### Named Rules
 **The Lowercase Sentence Rule.** Every serif display line is a lowercase sentence written that way in the copy, ending in a period or an ellipsis. Serif is italic 400 only; no bold serif, no roman serif.
 
-**The Serif Speaks, Sans Works Rule.** Crimson Text is for the wordmark, headlines and titles. Buttons, labels, inputs, nav and anything under 1.5rem are Inter.
+**The Serif Speaks, Sans Works Rule.** Instrument Serif is for the wordmark, headlines and titles. Buttons, labels, inputs, nav and anything under 1.5rem are Instrument Sans.
 
 ## Layout
 
@@ -263,20 +263,20 @@ Everything round. Interactive controls are full pills (999px); the mascot, its m
 ### Buttons
 Tactile and springy, like the app's controls.
 - **Shape:** Full pill (999px).
-- **Primary:** Ink fill, white Inter 600 label, padding 1em 1.5em, Pill rest shadow. Small variant 0.85rem, 0.8em 1.15em, used in the bar.
+- **Primary:** Ink fill, white Instrument Sans 600 label, padding 1em 1.5em, Pill rest shadow. Small variant 0.85rem, 0.8em 1.15em, used in the bar.
 - **On ink:** On the Windows card the pill inverts to Paper with Ink text.
 - **Hover / Focus:** On fine pointers, lifts 3px and scales 1.03 on the bounce curve (380ms) with Pill lift shadow. Press squashes to 0.95 in 120ms. Focus is a 2px ink outline at 3px offset (white on ink surfaces). Busy state drops to 70% opacity.
 - **Quiet link:** Slate Muted text that darkens to Ink on hover, underlined with a 1px line at 0.2em offset.
 
 ### Chips
-- **Time chip:** Mist fill, Ink Inter 600 0.85rem with tabular numerals, pill, 8px 12px. Marks the time of each moment in the day.
+- **Time chip:** Mist fill, Ink Instrument Sans 600 0.85rem with tabular numerals, pill, 8px 12px. Marks the time of each moment in the day.
 
 ### Cards / Containers
 - **Corner Style:** 28px for the download pair, 22px for mood tiles, 20px for screen frames.
 - **Background:** Ink (Windows) beside Mist (Mac) as a deliberate pair; mood tiles are transparent until selected, then Ink.
 - **Shadow Strategy:** Flat; see Elevation. Screen frames take the Screen shadow.
 - **Internal Padding:** clamp(28px, 4vw, 48px) on download cards; 22px 22px 24px on mood tiles.
-- **Mood tile:** A mini pebble (64px) acting out the mood, an Inter 600 name, a Deep Slate description. Selected tiles fill Ink, lift 6px and tilt -1.2deg; hover lifts 4px.
+- **Mood tile:** A mini pebble (64px) acting out the mood, an Instrument Sans 600 name, a Deep Slate description. Selected tiles fill Ink, lift 6px and tilt -1.2deg; hover lifts 4px.
 
 ### Inputs / Fields
 - **Style:** Paper fill, 1px #C9CAD3 stroke, pill, 0.85em 1.2em, Ink text and caret.
@@ -284,7 +284,7 @@ Tactile and springy, like the app's controls.
 - **Error / Status:** A status line under the row in Deep Slate; success is green 600, error a dark red 600. The invalid field's stroke currently borrows Listening Red, which The One Meaning Rule does not allow; it is recorded as drift, not as the pattern.
 
 ### Navigation
-- **Top bar:** Fixed, 68px, translucent white with saturate(1.4) blur(14px) (solid white under reduced transparency). Wordmark left; muted 0.92rem Inter links with 28px gaps right, darkening to Ink on hover; small pill last. Below 820px the links hide and only the wordmark and pill remain.
+- **Top bar:** Fixed, 68px, translucent white with saturate(1.4) blur(14px) (solid white under reduced transparency). Wordmark left; muted 0.92rem Instrument Sans links with 28px gaps right, darkening to Ink on hover; small pill last. Below 820px the links hide and only the wordmark and pill remain.
 - **Footer:** A Haze hairline on top, wordmark, muted links, fine print pushed right.
 - **Legal pages:** A 44rem reading column; the nav shows the wordmark left and muted links, with the current page underlined at 0.35em offset.
 
@@ -308,7 +308,7 @@ A grey pebble with three ink dots, rendered every frame on a fixed layer above t
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every serif line italic 400 Crimson Text, lowercase in the copy, ending in a period or the ellipsis.
+- **Do** keep every serif line italic 400 Instrument Serif, lowercase in the copy, ending in a period or the ellipsis.
 - **Do** use Ink (#030213) for type, dots and primary pills, and tint every shadow from it.
 - **Do** make interactive controls full pills and spring them: bounce curve cubic-bezier(0.34, 1.56, 0.64, 1), press to scale 0.95 in 120ms.
 - **Do** let the three dots carry state: staggered three-beat typing (about 0.12 to 0.14s apart) for thinking, face for talking, red bars for listening, blue badge for approval.
