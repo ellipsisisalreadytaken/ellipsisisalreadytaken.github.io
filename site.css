@@ -253,6 +253,8 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
 .foot nav a { text-decoration: none; }
 .foot nav a:hover { color: var(--ink); }
 .foot .fine { margin-left: auto; }
+.foot-brand { display: flex; align-items: baseline; gap: 12px; margin: 0; }
+.foot-tag { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--muted); }
 
 /* Things that pop in once, with a bounce */
 .pop { opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity 300ms ease, transform 720ms var(--bounce); }
