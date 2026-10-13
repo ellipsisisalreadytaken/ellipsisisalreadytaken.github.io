@@ -184,13 +184,11 @@
         <h3>Windows 10 and 11</h3>
         <p>Ellipsa is in a private beta. Ask with the Google account you work in, and you’ll get the installer when you’re in. It reads your last 30 days, so your first briefing already knows your people.</p>
         <label for="beta-email">Google account (Gmail or work)</label>
-        <div class="row">
-          <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
-          <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="pill" type="submit">Request the Windows beta</button>
-        </div>
+        <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
+        <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="beta-note">What would you use it for? <span class="opt">(optional)</span></label>
-        <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I run sales calls all day">
+        <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I’m on sales calls all day">
+        <button class="pill" type="submit">Request the Windows beta</button>
         <p id="beta-msg" class="msg" role="status"></p>
         <p class="fine">Windows may warn that the installer comes from an unknown publisher; it’s safe to run.</p>
       </form>
