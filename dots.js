@@ -384,6 +384,7 @@
       msg.classList.add('ok');
       msg.textContent = 'You’re on the list. We’ll email you once, when the Mac app is ready.';
       form.reset();
+      document.dispatchEvent(new CustomEvent('ellipsa:waitlist'));
       setMode('happy', 'you’re on the list!');
     } catch (err) {
       msg.classList.add('err');
