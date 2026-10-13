@@ -235,6 +235,16 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
 .win .fine { color: #A3A3B5; font-size: 0.85rem; }
 .win .pill { background: #fff; color: var(--ink); }
 .win :focus-visible { outline-color: #fff; }
+.win label { font-size: 0.9rem; font-weight: 600; margin-top: 6px; color: #fff; }
+.win label .opt { font-weight: 400; color: #A3A3B5; }
+.win .row { display: flex; gap: 8px; width: 100%; flex-wrap: wrap; }
+.win input[type="email"], .win input[type="text"] { flex: 1 1 13rem; min-width: 0; width: 100%; font: inherit; color: var(--ink); background: #fff; border: 1px solid #fff; border-radius: 999px; padding: 0.85em 1.2em; caret-color: var(--ink); }
+.win .row input[type="email"] { width: auto; }
+.win input:focus { outline: 2px solid #fff; outline-offset: 2px; }
+.win input[aria-invalid="true"] { box-shadow: inset 0 0 0 2px #F87171; }
+.win .msg { color: #C9C9D6; }
+.win .msg.ok { color: #86EFAC; }
+.win .msg.err { color: #FCA5A5; }
 .mac { background: var(--g100); }
 .mac > p:not(.msg) { color: #5E5E73; max-width: 40ch; }
 .mac label { font-size: 0.9rem; font-weight: 600; margin-top: 6px; }

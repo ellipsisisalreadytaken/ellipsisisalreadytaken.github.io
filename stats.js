@@ -14,7 +14,7 @@
     } catch { /* counting never gets in the way */ }
   };
   send('view');
-  document.addEventListener('click', e => { if (e.target.closest?.('[data-download]')) send('beta_request'); });
+  document.addEventListener('ellipsa:beta', () => send('beta_request'));
   document.addEventListener('ellipsa:waitlist', () => send('waitlist_join'));
   for (const video of document.querySelectorAll('video')) video.addEventListener('play', () => send('film_play'), { once: true });
 })();

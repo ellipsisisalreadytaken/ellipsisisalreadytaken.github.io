@@ -353,6 +353,49 @@
   const video = $('.video video');
   if (video) fetch(video.getAttribute('src'), { method: 'HEAD' }).then(r => { if (!r.ok) $('.video').hidden = true; }).catch(() => { $('.video').hidden = true; });
 
+  // ---------- The Windows beta: a request, approved by the team ----------
+  const beta = $('#beta');
+  const betaMsg = $('#beta-msg');
+  beta?.addEventListener('submit', async e => {
+    e.preventDefault();
+    const email = beta.email.value.trim();
+    const button = $('button', beta);
+    betaMsg.className = 'msg';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      beta.email.setAttribute('aria-invalid', 'true');
+      betaMsg.classList.add('err');
+      betaMsg.textContent = 'That email address doesn’t look right. Check it and try again.';
+      beta.email.focus();
+      return;
+    }
+    beta.email.removeAttribute('aria-invalid');
+    button.setAttribute('aria-busy', 'true');
+    button.disabled = true;
+    betaMsg.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://ellipsa-proxy.ellipsa.workers.dev/beta/request', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, note: beta.note.value, website: beta.website.value }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'The request didn’t go through.');
+      betaMsg.classList.add('ok');
+      betaMsg.textContent = body.status === 'approved'
+        ? 'You’re already in. Check your email for the installer, or write to husseinkhidr2@gmail.com.'
+        : 'Thanks, you’re on the list. You’ll get an email with the installer when you’re in.';
+      beta.reset();
+      document.dispatchEvent(new CustomEvent('ellipsa:beta'));
+      setMode('happy', 'see you soon!');
+    } catch (err) {
+      betaMsg.classList.add('err');
+      betaMsg.textContent = `${err.message || 'Something went wrong.'} Try again in a minute, or email husseinkhidr2@gmail.com.`;
+    } finally {
+      button.removeAttribute('aria-busy');
+      button.disabled = false;
+    }
+  });
+
   // ---------- The Mac waitlist ----------
   const form = $('#mac');
   const msg = $('#mac-msg');

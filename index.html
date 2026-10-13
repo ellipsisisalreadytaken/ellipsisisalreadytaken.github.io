@@ -180,12 +180,20 @@
   <section id="get" class="get" data-mode="happy" aria-labelledby="get-title">
     <div class="get-head"><h2 id="get-title">go on, give it something to remember.</h2><div class="home home-get" aria-hidden="true"></div></div>
     <div class="ways">
-      <div class="win">
+      <form id="beta" class="win" novalidate>
         <h3>Windows 10 and 11</h3>
-        <p>Ellipsa is in a private beta. Ask for an invite and you’ll get the installer. Connect Google, and it reads your last 30 days, so your first briefing already knows your people.</p>
-        <a class="pill" href="mailto:husseinkhidr2@gmail.com?subject=Ellipsa%20Windows%20beta&amp;body=I'd%20like%20to%20try%20Ellipsa%20on%20Windows." data-download>Request the Windows beta</a>
-        <p class="fine">Windows may warn that the installer comes from an unknown publisher. Google sign-in is open to invited testers for now.</p>
-      </div>
+        <p>Ellipsa is in a private beta. Ask with the Google account you work in, and you’ll get the installer when you’re in. It reads your last 30 days, so your first briefing already knows your people.</p>
+        <label for="beta-email">Google account (Gmail or work)</label>
+        <div class="row">
+          <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
+          <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="pill" type="submit">Request the Windows beta</button>
+        </div>
+        <label for="beta-note">What would you use it for? <span class="opt">(optional)</span></label>
+        <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I run sales calls all day">
+        <p id="beta-msg" class="msg" role="status"></p>
+        <p class="fine">Windows may warn that the installer comes from an unknown publisher; it’s safe to run.</p>
+      </form>
       <form id="mac" class="mac" novalidate>
         <h3>macOS</h3>
         <p>The Mac app is next. Leave your email and we’ll write once, when it’s ready.</p>
