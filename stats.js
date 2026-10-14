@@ -17,4 +17,14 @@
   document.addEventListener('ellipsa:beta', () => send('beta_request'));
   document.addEventListener('ellipsa:waitlist', () => send('waitlist_join'));
   for (const video of document.querySelectorAll('video')) video.addEventListener('play', () => send('film_play'), { once: true });
+  // Where visitors stop on the way to asking: clicked "Get the beta", reached the form, started on it
+  for (const link of document.querySelectorAll('a[href="#get"]')) link.addEventListener('click', () => send('cta_click'), { once: true });
+  const form = document.getElementById('beta');
+  if (form && 'IntersectionObserver' in window) {
+    const seen = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { send('form_seen'); seen.disconnect(); }
+    }, { threshold: 0.5 });
+    seen.observe(form);
+  }
+  form?.addEventListener('focusin', () => send('form_start'), { once: true });
 })();
