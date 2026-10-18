@@ -43,7 +43,7 @@ written, the next call booked. Memory of every person is what makes the brief go
 - Windows installer exists (Ellipsa-Setup-0.1.0.exe, ~97MB). It is not code-signed yet, so Windows SmartScreen will warn. Where it is publicly hosted is not decided yet (the app repo is private).
 - Google sign-in is limited to approved test users until Google verifies the app; public downloaders may not be able to connect Gmail yet. Undecided how the site handles this.
 - Memory is stored encrypted on the user's computer with daily encrypted backups. AI requests go through Ellipsa's relay to OpenAI.
-- The Mac app is in beta (Apple chip and Intel .dmg files, not signed by Apple yet, so macOS asks once: Open Anyway). Call audio on a Mac comes through the microphone only, so calls need speakers. No Linux app.
+- The Mac app is in beta (Apple chip and Intel .dmg files, not signed by Apple yet, so macOS asks once: Open Anyway). No Linux app.
 - Pricing is not decided. Do not show prices.
 
 ## Brand Commitments
