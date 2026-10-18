@@ -52,9 +52,16 @@
     const vw = innerWidth, vh = innerHeight;
     const cornerS = vw < 820 ? 56 : 72;
     const corner = { x: vw - cornerS - (vw < 820 ? 16 : 28), y: vh - cornerS - (vw < 820 ? 16 : 28), s: cornerS };
+    // A page without a hero (How it works): the pebble waits in the corner, and settles beside the
+    // closing "try it" when that comes into view, as on the homepage
+    const hero = $('.hero');
+    if (!hero) {
+      const g = homeGetEl?.getBoundingClientRect();
+      if (g && g.top < vh * 0.78 && g.bottom > vh * 0.12) return { x: g.left, y: g.top, s: g.width, docked: false };
+      return { ...corner, docked: true };
+    }
     const r = homeEl.getBoundingClientRect();
     const home = { x: r.left, y: r.top, s: r.width };
-    const hero = $('.hero');
     const t = Math.min(1, Math.max(0, scrollY / (hero.offsetHeight * (vw < 820 ? 0.35 : 0.5))));
     const e = t * t * (3 - 2 * t);
     if (homeGetEl && t >= 1) {
@@ -260,10 +267,11 @@
       d.home = 'pebble';
       if (i === 2) ellipsisEl?.classList.add('left');
       if (!reduce) d.y.vel -= 1100;
-      if (i === 2) setTimeout(() => say(LINES.hero), 500);
+      // No greeting over the hero: its bubble would sit on the brief people are reading
     }, reduce ? 0 : i * 150));
   }
-  setTimeout(hopIn, reduce ? 0 : 1600);
+  // Soon after the page opens: the brief comes out of the pebble right after (site.css, .brief-pop)
+  setTimeout(hopIn, reduce ? 0 : 700);
   addEventListener('scroll', hopIn, { once: true, passive: true });
 
   // ---------- Moods by section ----------

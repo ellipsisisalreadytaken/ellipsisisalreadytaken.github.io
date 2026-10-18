@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works · ellipsa</title>
+<meta name="description" content="How Ellipsa works: the brief before every call, answers during it, notes and the follow-up after, inbox zero, and the apps it works with.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.remove("no-js")</script>
+<script src="dots.js" defer></script>
+<script src="stats.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <a class="wordmark" href="./" aria-label="Ellipsa home">ellipsa</a>
+  <nav aria-label="Sections">
+    <a href="how-it-works.html" aria-current="page">How it works</a>
+    <a href="index.html#privacy">Privacy</a>
+    <a href="index.html#get">Mac waitlist</a>
+  </nav>
+  <a class="pill pill-small" href="index.html#get">Get the Windows beta</a>
+</header>
+
+<div class="mascot" aria-hidden="true">
+  <div class="pebble"><span class="badge">2</span></div>
+  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  <p class="bubble"></p>
+</div>
+
+<main id="main">
+  <section class="page-head" data-mode="face">
+    <h1>how ellipsa works.</h1>
+    <p class="lede">One button in the corner of your screen. Before a call it briefs you, during it it answers, and after it it does the follow-up.</p>
+  </section>
+
+  <section id="brief" class="inbox brief" data-mode="list" aria-labelledby="brief-title">
+    <div class="inbox-grid">
+      <div>
+        <h2 id="brief-title">a brief before every call.</h2>
+        <p class="lede">Six calls today, and half those people are waiting on something from you. It’s all somewhere in your inbox, and you have two minutes between calls. Ellipsa hands it to you.</p>
+        <ul class="inbox-facts">
+          <li><strong>What you owe each other, first.</strong> What you said you’d do, with the email already written, and what they still owe you, with a nudge ready.</li>
+          <li><strong>What you last discussed.</strong> What was agreed and what was left open, from your last call or email thread.</li>
+          <li><strong>Who they are.</strong> Every email, Slack thread and call between you, so each brief knows them a little better.</li>
+          <li><strong>Ready when you are.</strong> Every call today has its brief waiting from the morning, and a notification brings it up five minutes before. Calendly bookings too: anything on your Google Calendar.</li>
+        </ul>
+      </div>
+      <figure class="inbox-shot"><img src="shots/brief.webp" alt="Ellipsa’s brief before a call with Priya: what you owe her, what she owes you, and what you agreed last time" width="900" height="633" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="button" class="button-tour" data-mode="ellipsis" aria-labelledby="button-title">
+    <h2 id="button-title">it lives in one little button.</h2>
+    <p class="lede">A round button sits in the corner of your screen. Everything Ellipsa does starts there, and the dots tell you what it’s up to.</p>
+    <div class="moods" role="tablist" aria-label="What the dots mean">
+      <button role="tab" aria-selected="true" data-mood="ellipsis"><i class="mini" data-mood="ellipsis" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Tap it<span>Ask anything, by typing or out loud.</span></button>
+      <button role="tab" aria-selected="false" data-mood="listen"><i class="mini" data-mood="listen" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Hold it<span>A ring traces the edge, then it listens in on your call and the dots turn red. Share your screen and nobody else sees it: Ellipsa stays invisible to everyone on the call. The audio is kept, encrypted, only until your notes are written.</span></button>
+      <button role="tab" aria-selected="false" data-mood="list"><i class="mini" data-mood="list" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Swipe up<span>Your briefing: who’s waiting on you and what you promised.</span></button>
+      <button role="tab" aria-selected="false" data-mood="badge"><i class="mini" data-mood="badge" aria-hidden="true"><b></b><b></b><b></b><em>2</em></i>Blue badge<span>Something waits for your yes, or a to-do is due. Nothing goes out until you approve it.</span></button>
+    </div>
+  </section>
+
+  <section id="day" class="day" aria-labelledby="day-title">
+    <h2 id="day-title">one day, nothing dropped.</h2>
+    <div class="day-grid">
+      <ol class="moments">
+        <li data-mode="list" data-shot="0"><img class="inline-shot" src="shots/m-briefing.webp" width="720" height="448" alt="Ellipsa’s morning briefing" loading="lazy"><time>8:30</time><h3>Your briefing</h3><p>Marcus is waiting on a reply, and you told Dana you’d send venue options by Friday. It can read it to you while you make coffee.</p></li>
+        <li data-mode="face" data-shot="1"><img class="inline-shot" src="shots/m-brief.webp" width="720" height="544" alt="Ellipsa’s brief before a call with Priya" loading="lazy"><time>1:55</time><h3>Five minutes before the call</h3><p>Last time you agreed $40 a seat, and you said you’d bring the Q3 numbers. She still owes you the signed order form. You walk in knowing.</p></li>
+        <li data-mode="listen" data-shot="2"><img class="inline-shot" src="shots/m-notes.webp" width="720" height="560" alt="Meeting notes Ellipsa wrote after the call" loading="lazy"><time>2:30</time><h3>After it</h3><p>Hold the button during the call and the notes are written when you hang up: what was decided, and who owes what. It all goes into your next brief.</p></li>
+        <li data-mode="badge" data-shot="3"><img class="inline-shot" src="shots/m-draft.webp" width="720" height="706" alt="A follow-up drafted by Ellipsa" loading="lazy"><time>4:10</time><h3>The follow-up</h3><p>Your follow-up is drafted in your own voice and the next call is booked. It waits for your yes.</p></li>
+      </ol>
+      <figure class="stage">
+        <div class="screen">
+          <img src="shots/briefing.webp" alt="Ellipsa's morning briefing" data-shot="0" width="1440" height="1012" loading="lazy">
+          <img src="shots/brief.webp" alt="Ellipsa’s brief before a call with Priya" data-shot="1" width="900" height="633" loading="lazy">
+          <img src="shots/notes.webp" alt="Meeting notes Ellipsa wrote after the call" data-shot="2" width="1440" height="1012" loading="lazy">
+          <img src="shots/draft.webp" alt="A follow-up drafted by Ellipsa" data-shot="3" width="1440" height="1012" loading="lazy">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="calls" class="calls" data-mode="listen" aria-labelledby="calls-title">
+    <h2 id="calls-title">it sits in on your calls. nobody else does.</h2>
+    <p class="lede">Hold the button and Ellipsa listens to the call on your own computer. No bot joins, the dots turn red so you always know, and it stays out of your screen share. It’s everything your notetaker does, it answers while you talk, and it feeds your next brief.</p>
+    <ol class="call-steps">
+      <li>
+        <figure><img src="shots/observe-live.webp" alt="Ellipsa answering a question in the middle of a call; its button shows red listening bars" width="1440" height="1012" loading="lazy"></figure>
+        <h3>Ask it anything, mid-call</h3>
+        <p>“What did we agree on pricing?” The answer comes in under three seconds, from your own email, notes and past calls, while you’re still talking.</p>
+      </li>
+      <li>
+        <figure><img src="shots/notes.webp" alt="Meeting notes Ellipsa wrote after a call: a summary, action items with owners and dates, and decisions" width="1440" height="1012" loading="lazy"></figure>
+        <h3>Hang up. It’s all written down.</h3>
+        <p>The full transcript, who said what, and notes topic by topic: decisions, action items with owners and dates, open questions. Names come from the invite or the people on your screen. Email the notes to everyone on the call in one click.</p>
+      </li>
+      <li>
+        <figure><img src="shots/person.webp" alt="A person card in Ellipsa: their recent calls and a suggested opener" width="1440" height="1012" loading="lazy"></figure>
+        <h3>Next time, it’s in the brief.</h3>
+        <p>What each of you promised on the call is kept with the person, beside every email and Slack thread between you. Before you speak again, it’s the first thing you see.</p>
+      </li>
+    </ol>
+    <p class="fine">Call audio is streamed for transcription. To name who said what, it is kept encrypted on your computer until your notes are written, then deleted. No headphones? It tells your voice from the call coming out of your speakers.</p>
+  </section>
+
+  <section id="acts" class="acts" data-mode="badge" aria-labelledby="acts-title">
+    <h2 id="acts-title">after the call, it does the follow-up.</h2>
+    <p class="lede">Like a good assistant, Ellipsa doesn’t stop at the brief. What you said you’d send is drafted in your voice, the next call is booked, the errand is run, and anything that sends or changes something waits for your yes.</p>
+    <ul class="act-list">
+      <li><img src="logos/gmail.svg" alt="" width="28" height="28"><span>Replies drafted in your voice, sent when you say so</span></li>
+      <li><img src="logos/googlecalendar.svg" alt="" width="28" height="28"><span>Calls booked in your free slots, invites sent</span></li>
+      <li><img src="logos/slack.svg" alt="" width="28" height="28"><span>Slack messages and replies</span></li>
+      <li><img src="logos/notion.svg" alt="" width="28" height="28"><span>Notion pages and database entries</span></li>
+      <li><img src="logos/github.svg" alt="" width="28" height="28"><span>GitHub issues, comments and pull requests</span></li>
+      <li><img src="logos/googledocs.svg" alt="" width="28" height="28"><span>Google Docs and Sheets, written for you</span></li>
+      <li><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#030213" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>Errands on any website, in its own browser, asking before anything final</span></li>
+    </ul>
+    <figure class="acts-shot"><img src="shots/actions.webp" alt="Ellipsa's Actions: an email waiting for approval, and to-dos from a call" width="1440" height="1012" loading="lazy"></figure>
+    <p class="fine">Every action item you’re given lands in one list, the late ones first. Approve once with “always allow” and it stops asking for that kind of thing. You can take it back any time in Settings.</p>
+  </section>
+
+  <section id="inbox" class="inbox" data-mode="happy" aria-labelledby="inbox-title">
+    <div class="inbox-grid">
+      <div>
+        <h2 id="inbox-title">inbox zero, everywhere you talk.</h2>
+        <p class="lede">Newsletters, promotions and notifications are cleared out of your inbox on their own, labelled so nothing is lost. What’s left is what needs you: Gmail, Slack and GitHub, in one short list.</p>
+        <ul class="inbox-facts">
+          <li><strong>Noise, gone.</strong> Archived and marked read within minutes, never deleted. One click puts it back.</li>
+          <li><strong>Alerts stay.</strong> Failed builds, security alerts, sign-in codes and declined payments stay in your inbox.</li>
+          <li><strong>People, never touched.</strong> Mail from a person always stays where it is.</li>
+          <li><strong>One list.</strong> Unanswered email, Slack messages waiting on you, reviews you were asked for. Reply, follow up, or mark it read without replying.</li>
+        </ul>
+      </div>
+      <figure class="inbox-shot"><img src="shots/inbox.webp" alt="Ellipsa's briefing showing the tidied inbox and what's waiting on you" width="1440" height="1012" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="chat" data-mode="ellipsis" aria-labelledby="chat-title">
+    <div class="chat-grid">
+    <div><h2 id="chat-title">ask it like you’d ask a colleague.</h2></div>
+    <div class="thread" aria-label="A conversation with Ellipsa">
+      <p class="me">what did I promise Dana this week?</p>
+      <p class="it">Three venue options for the offsite, by Friday. You said it in Tuesday’s email.</p>
+      <p class="me">who haven’t I replied to?</p>
+      <p class="it">Marcus, about the contract, for 9 days. And Priya’s Q3 question.</p>
+      <p class="me">draft something to Marcus</p>
+      <p class="it">Done, in your voice. It’s waiting for you to read before it sends.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="apps" data-mode="ellipsis" aria-labelledby="apps-title">
+    <h2 id="apps-title">works with what you already use.</h2>
+    <ul class="logos" aria-label="Connected apps">
+      <li><img src="logos/gmail.svg" alt="Gmail" width="32" height="32"></li>
+      <li><img src="logos/googlecalendar.svg" alt="Google Calendar" width="32" height="32"></li>
+      <li><img src="logos/slack.svg" alt="Slack" width="32" height="32"></li>
+      <li><img src="logos/notion.svg" alt="Notion" width="32" height="32"></li>
+      <li><img src="logos/github.svg" alt="GitHub" width="32" height="32"></li>
+      <li><img src="logos/claude.svg" alt="Claude" width="32" height="32"></li>
+      <li><img src="logos/cursor.svg" alt="Cursor" width="32" height="32"></li>
+      <li><img src="logos/vscode.svg" alt="VS Code" width="32" height="32"></li>
+      <li><img src="logos/windsurf.svg" alt="Windsurf" width="32" height="32"></li>
+      <li><img src="logos/googlegemini.svg" alt="Gemini CLI" width="32" height="32"></li>
+    </ul>
+    <p class="fine">Several Google accounts at once. Your memory also works in Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Gemini CLI, Codex and LM Studio.</p>
+  </section>
+
+  <section class="get get-link" data-mode="happy" aria-labelledby="get-title">
+    <div class="get-head"><h2 id="get-title">try it before your next call.</h2><div class="home home-get" aria-hidden="true"></div></div>
+    <div class="actions"><a class="pill" href="index.html#get">Get the Windows beta</a><a class="quiet" href="index.html#get">On a Mac? Join the waitlist</a></div>
+  </section>
+
+  <footer class="foot">
+    <p class="foot-brand"><a class="wordmark" href="./">ellipsa</a> <span class="foot-tag">never walk into a call cold.</span></p>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></nav>
+    <p class="fine">© 2026 Ellipsa</p>
+  </footer>
+</main>
+</body>
+</html>

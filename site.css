@@ -257,7 +257,8 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
 .msg { min-height: 1.4em; font-size: 0.92rem; color: #5E5E73; }
 .msg.ok { color: #15803D; font-weight: 600; }
 .msg.err { color: #B91C1C; font-weight: 600; }
-@media (max-width: 820px) { .ways { grid-template-columns: 1fr; } }
+@media (max-width: 820px) { .ways { grid-template-columns: minmax(0, 1fr); } }
+.ways > * { min-width: 0; }
 
 .foot { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding: 40px var(--pad) 56px; border-top: 1px solid var(--g200); }
 .foot nav { display: flex; gap: 22px; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
@@ -277,3 +278,34 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
   .ellipsis.left i, .mini b, .mini em, .thread .typing i { animation: none !important; }
   .mini[data-mood="badge"] em { transform: scale(1); }
 }
+
+/* The homepage hero: the mascot, with the brief coming out of it like a speech bubble, as the
+   button opens it in the app */
+.hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+/* The brief sits level with the headline; the pebble hangs off its corner without adding height */
+.hero-stage { position: relative; }
+.hero-stage .home { position: absolute; right: 0; bottom: 0; transform: translateY(70%); width: clamp(150px, 15vw, 220px); margin: 0; }
+.brief-pop { position: relative; margin: 0; width: 84%; transform-origin: 92% 108%; }
+.brief-pop img { display: block; width: 100%; height: auto; border-radius: 22px; background: var(--g100);
+  box-shadow: 0 50px 80px -50px rgba(3,2,19,0.45), 0 20px 40px -30px rgba(3,2,19,0.25); }
+/* The bubble's tail, pointing down to the pebble */
+.brief-pop::after { content: ""; position: absolute; right: 9%; bottom: -14px; width: 30px; height: 30px; background: #C3C4C8;
+  transform: rotate(45deg); border-radius: 4px; z-index: -1; }
+@keyframes brief-pop { from { opacity: 0; transform: scale(0.35); } 70% { opacity: 1; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+/* Out of the pebble once the headline's dots have hopped into it */
+.js .brief-pop, html:not(.no-js) .brief-pop { animation: brief-pop 650ms cubic-bezier(0.2, 0.9, 0.3, 1.2) 1.2s both; }
+@media (prefers-reduced-motion: reduce) { html:not(.no-js) .brief-pop { animation: none; } }
+@media (max-width: 820px) {
+  .hero-stage { margin: 8px 0 64px; }
+  .hero-stage .home { width: 104px; }
+  .brief-pop { width: 92%; }
+}
+.steps h2 { max-width: 20ch; }
+.more { margin-top: 8px; }
+/* How it works: a page title in place of the hero */
+.page-head { padding-top: 150px; padding-bottom: 0; }
+.page-head h1 { font-size: clamp(3rem, 6vw, 5.2rem); }
+.page-head .lede { margin-top: 20px; max-width: 46ch; }
+.get-link .actions { margin-top: 36px; }
+.bar nav a[aria-current="page"] { color: var(--ink); }
+@media (max-width: 820px) { .hero { grid-template-columns: 1fr; } }
