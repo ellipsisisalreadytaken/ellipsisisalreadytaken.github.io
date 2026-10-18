@@ -118,6 +118,21 @@
     </ol>
     <p class="fine">Call audio is streamed for transcription. To name who said what, it is kept encrypted on your computer until your notes are written, then deleted. No headphones? It tells your voice from the call coming out of your speakers.</p>
   </section>
+  <section id="acts" class="acts" data-mode="badge" aria-labelledby="acts-title">
+    <h2 id="acts-title">after the call, it does the follow-up.</h2>
+    <p class="lede">Like a good assistant, Ellipsa doesn’t stop at the brief. What you said you’d send is drafted in your voice, the next call is booked, the errand is run, and anything that sends or changes something waits for your yes.</p>
+    <ul class="act-list">
+      <li><img src="logos/gmail.svg" alt="" width="28" height="28"><span>Replies drafted in your voice, sent when you say so</span></li>
+      <li><img src="logos/googlecalendar.svg" alt="" width="28" height="28"><span>Calls booked in your free slots, invites sent</span></li>
+      <li><img src="logos/slack.svg" alt="" width="28" height="28"><span>Slack messages and replies</span></li>
+      <li><img src="logos/notion.svg" alt="" width="28" height="28"><span>Notion pages and database entries</span></li>
+      <li><img src="logos/github.svg" alt="" width="28" height="28"><span>GitHub issues, comments and pull requests</span></li>
+      <li><img src="logos/googledocs.svg" alt="" width="28" height="28"><span>Google Docs and Sheets, written for you</span></li>
+      <li><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#030213" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>Errands on any website, in its own browser, asking before anything final</span></li>
+    </ul>
+    <figure class="acts-shot"><img src="shots/actions.webp" alt="Ellipsa's Actions: an email waiting for approval, and to-dos from a call" width="1440" height="1012" loading="lazy"></figure>
+    <p class="fine">Every action item you’re given lands in one list, the late ones first. Approve once with “always allow” and it stops asking for that kind of thing. You can take it back any time in Settings.</p>
+  </section>
 
   <section id="inbox" class="inbox" data-mode="happy" aria-labelledby="inbox-title">
     <div class="inbox-grid">
@@ -135,20 +150,6 @@
     </div>
   </section>
 
-  <section id="acts" class="acts" data-mode="badge" aria-labelledby="acts-title">
-    <h2 id="acts-title">it does the work. you say yes.</h2>
-    <p class="lede">Ellipsa doesn’t stop at reminding you. It acts, and anything that sends or changes something waits for your approval, step by step.</p>
-    <ul class="act-list">
-      <li><img src="logos/gmail.svg" alt="" width="28" height="28"><span>Replies drafted in your voice, sent when you say so</span></li>
-      <li><img src="logos/googlecalendar.svg" alt="" width="28" height="28"><span>Calls booked in your free slots, invites sent</span></li>
-      <li><img src="logos/slack.svg" alt="" width="28" height="28"><span>Slack messages and replies</span></li>
-      <li><img src="logos/notion.svg" alt="" width="28" height="28"><span>Notion pages and database entries</span></li>
-      <li><img src="logos/github.svg" alt="" width="28" height="28"><span>GitHub issues, comments and pull requests</span></li>
-      <li><img src="logos/googledocs.svg" alt="" width="28" height="28"><span>Google Docs and Sheets, written for you</span></li>
-    </ul>
-    <figure class="acts-shot"><img src="shots/actions.webp" alt="Ellipsa's Actions: an email waiting for approval, and to-dos from a call" width="1440" height="1012" loading="lazy"></figure>
-    <p class="fine">Every action item you’re given lands in one list, the late ones first. Approve once with “always allow” and it stops asking for that kind of thing. You can take it back any time in Settings.</p>
-  </section>
 
   <section class="chat" data-mode="ellipsis" aria-labelledby="chat-title">
     <div class="chat-grid">
@@ -208,7 +209,7 @@
         <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
         <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="beta-note">What would you use it for? <span class="opt">(optional)</span></label>
-        <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I’m on sales calls all day">
+        <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I’m on client calls all day">
         <button class="pill" type="submit">Request the Windows beta</button>
         <p id="beta-msg" class="msg" role="status"></p>
         <p class="fine">Windows may warn that the installer comes from an unknown publisher; it’s safe to run.</p>

@@ -122,7 +122,7 @@
     privacy: 'what you tell me stays on your computer.',
     calls: 'ask me mid-call. i’ll answer in seconds.',
     inbox: 'swept 23 newsletters before you woke up.',
-    acts: 'say the word and it’s done.',
+    acts: 'that follow-up you owe? written.',
     apps: 'i read these. carefully.',
     happy: 'yay! go on, try me.',
   };

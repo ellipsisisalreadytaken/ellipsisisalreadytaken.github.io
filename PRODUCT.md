@@ -12,7 +12,7 @@ Static HTML, CSS and JavaScript on GitHub Pages (repo ellipsisisalreadytaken/ell
 
 ## Users
 
-Founders, consultants and salespeople with ten or more outside calls a week: people whose work runs on relationships. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows today.
+Founders, consultants and agency owners with ten or more outside calls a week: people whose work runs on relationships and whose CRM is their inbox. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows today.
 
 ## Product Purpose
 
@@ -24,8 +24,9 @@ Settled 18 Oct 2026 (the app repo's `docs/strategy/positioning.md` is the source
 Lead with the brief before a call: "Ellipsa gets you ready for every call in a minute." Tagline:
 "never walk into a call cold." A minute before each call it shows who they are, what you last
 discussed and what you owe each other (owed items first, the follow-up already written), from your
-own email, Slack and past calls. For founders, consultants and salespeople with 10+ outside calls a
-week. Memory of every person is what makes the brief good, never the opening line. Don't lead with
+own email, Slack and past calls. For founders, consultants and agency owners with 10+ outside calls
+a week (not sales teams on a company CRM). After the brief, it acts like an EA: the follow-up
+written, the next call booked. Memory of every person is what makes the brief good, never the opening line. Don't lead with
 "your AI self", "remembers all your work" or a feature list, and keep answers during a call as the second act
 (proven on the founder's live calls, about 3 seconds), after the brief.
 
