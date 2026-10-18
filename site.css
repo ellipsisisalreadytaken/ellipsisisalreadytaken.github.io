@@ -158,7 +158,7 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
 .calls .lede, .acts .lede { margin-top: 20px; max-width: 48ch; }
 .acts-shot { margin: 40px 0 8px; max-width: 920px; border-radius: 20px; overflow: hidden; background: var(--g100); box-shadow: 0 24px 60px -30px rgba(3, 2, 19, 0.25); }
 .acts-shot img { width: 100%; height: auto; display: block; }
-.call-steps { list-style: none; padding: 0; margin: 48px 0 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); max-width: 1200px; counter-reset: step; }
+.call-steps { list-style: none; padding: 0; margin: 48px 0 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); max-width: 1200px; counter-reset: step; }
 .call-steps li { display: flex; flex-direction: column; gap: 12px; }
 .call-steps figure { margin: 0 0 8px; border-radius: 20px; overflow: hidden; background: var(--g100); aspect-ratio: 64 / 45;
   box-shadow: 0 40px 70px -46px rgba(3,2,19,0.45), 0 16px 30px -24px rgba(3,2,19,0.25); }

@@ -112,14 +112,15 @@
     bubbleTimer = setTimeout(() => bubbleEl.classList.remove('on'), ms);
   }
   const LINES = {
-    hero: 'hi! i remember, so you don’t have to.',
+    hero: 'hi! i’ll get you ready for your next call.',
+    brief: 'Priya in 30 min. you owe her the Q3 numbers.',
     ellipsis: 'ask me anything…',
     listen: 'listening… nothing gets saved.',
     list: 'morning! Marcus is waiting on you.',
     badge: 'your reply to Marcus is ready for a look.',
     face: 'Priya asked for the Q3 numbers last time.',
     privacy: 'what you tell me stays on your computer.',
-    calls: 'shh, i’m listening. no bot, no recording.',
+    calls: 'ask me mid-call. i’ll answer in seconds.',
     inbox: 'swept 23 newsletters before you woke up.',
     acts: 'say the word and it’s done.',
     apps: 'i read these. carefully.',
@@ -304,7 +305,7 @@
         continue;
       }
       if (el.classList.contains('hero')) { if (started) setMode('face'); continue; }
-      const line = el.id === 'privacy' ? LINES.privacy : el.id === 'calls' ? LINES.calls : el.id === 'inbox' ? LINES.inbox : el.id === 'acts' ? LINES.acts
+      const line = el.id === 'brief' ? LINES.brief : el.id === 'privacy' ? LINES.privacy : el.id === 'calls' ? LINES.calls : el.id === 'inbox' ? LINES.inbox : el.id === 'acts' ? LINES.acts
         : el.classList.contains('apps') ? LINES.apps : el.id === 'get' ? LINES.happy : '';
       setMode(el.dataset.mode, line);
     }

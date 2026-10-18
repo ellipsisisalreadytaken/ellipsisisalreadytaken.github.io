@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ellipsa · your AI self</title>
-<meta name="description" content="Ellipsa is your AI self: it remembers every person and promise across your email, calendar, Slack and calls, answers in your meetings, and nudges you before anything slips.">
+<title>ellipsa · never walk into a call cold</title>
+<meta name="description" content="Ellipsa gets you ready for every call in a minute: who they are, what you last discussed and what you owe each other, from your own email, Slack and past calls. It runs on your computer, and no bot joins.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,7 +20,7 @@
 <header class="bar">
   <a class="wordmark" href="./" aria-label="Ellipsa home">ellipsa</a>
   <nav aria-label="Sections">
-    <a href="#button">The button</a>
+    <a href="#brief">Before a call</a>
     <a href="#day">A day</a>
     <a href="#calls">Calls</a>
     <a href="#privacy">Privacy</a>
@@ -39,14 +39,30 @@
 <main id="main">
   <section class="hero" data-mode="face">
     <div class="hero-copy">
-      <h1>you said you’d get back to them<span class="ellipsis" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr">…</span></h1>
-      <p class="lede">Your AI self. Ellipsa remembers every person and promise across your email, calendar, Slack and calls, and nudges you before anything slips.</p>
+      <h1>never walk into a call cold<span class="ellipsis" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr">…</span></h1>
+      <p class="lede">Ellipsa gets you ready for every call in a minute. Before it starts, you see who they are, what you last discussed and what you owe each other, from your own email, Slack and past calls.</p>
       <div class="actions">
         <a class="pill" href="#get">Get the Windows beta</a>
         <a class="quiet" href="#get">On a Mac? Join the waitlist</a>
       </div>
     </div>
     <div class="home" aria-hidden="true"></div>
+  </section>
+
+  <section id="brief" class="inbox brief" data-mode="list" aria-labelledby="brief-title">
+    <div class="inbox-grid">
+      <div>
+        <h2 id="brief-title">a brief before every call.</h2>
+        <p class="lede">Six calls today, and half those people are waiting on something from you. It’s all somewhere in your inbox, and you have two minutes between calls. Ellipsa hands it to you.</p>
+        <ul class="inbox-facts">
+          <li><strong>What you owe each other, first.</strong> What you said you’d do, with the email already written, and what they still owe you, with a nudge ready.</li>
+          <li><strong>What you last discussed.</strong> What was agreed and what was left open, from your last call or email thread.</li>
+          <li><strong>Who they are.</strong> Every email, Slack thread and call between you, so each brief knows them a little better.</li>
+          <li><strong>Ready when you are.</strong> Every call today has its brief waiting from the morning, and a notification brings it up five minutes before. Calendly bookings too: anything on your Google Calendar.</li>
+        </ul>
+      </div>
+      <figure class="inbox-shot"><img src="shots/brief.webp" alt="Ellipsa’s brief before a call with Priya: what you owe her, what she owes you, and what you agreed last time" width="900" height="633" loading="lazy"></figure>
+    </div>
   </section>
 
   <section id="button" class="button-tour" data-mode="ellipsis" aria-labelledby="button-title">
@@ -65,15 +81,15 @@
     <div class="day-grid">
       <ol class="moments">
         <li data-mode="list" data-shot="0"><img class="inline-shot" src="shots/m-briefing.webp" width="720" height="448" alt="Ellipsa’s morning briefing" loading="lazy"><time>8:30</time><h3>Your briefing</h3><p>Marcus is waiting on a reply, and you told Dana you’d send venue options by Friday. It can read it to you while you make coffee.</p></li>
-        <li data-mode="face" data-shot="1"><img class="inline-shot" src="shots/m-person.webp" width="720" height="780" alt="A person card in Ellipsa" loading="lazy"><time>1:55</time><h3>Before the call</h3><p>Priya asked for the Q3 numbers last time, and you said you’d bring them. Her card shows what each of you promised.</p></li>
-        <li data-mode="listen" data-shot="2"><img class="inline-shot" src="shots/m-chat.webp" width="720" height="452" alt="Asking Ellipsa a question" loading="lazy"><time>2:20</time><h3>During it</h3><p>Ask out loud, “what did we agree on pricing?”, and the answer comes from your own records. No bot joins the call.</p></li>
-        <li data-mode="badge" data-shot="3"><img class="inline-shot" src="shots/m-draft.webp" width="720" height="706" alt="A follow-up drafted by Ellipsa" loading="lazy"><time>4:10</time><h3>After</h3><p>Your follow-up is drafted in your own voice and the next call is booked. It waits for your yes.</p></li>
+        <li data-mode="face" data-shot="1"><img class="inline-shot" src="shots/m-brief.webp" width="720" height="544" alt="Ellipsa’s brief before a call with Priya" loading="lazy"><time>1:55</time><h3>Five minutes before the call</h3><p>Last time you agreed $40 a seat, and you said you’d bring the Q3 numbers. She still owes you the signed order form. You walk in knowing.</p></li>
+        <li data-mode="listen" data-shot="2"><img class="inline-shot" src="shots/m-notes.webp" width="720" height="560" alt="Meeting notes Ellipsa wrote after the call" loading="lazy"><time>2:30</time><h3>After it</h3><p>Hold the button during the call and the notes are written when you hang up: what was decided, and who owes what. It all goes into your next brief.</p></li>
+        <li data-mode="badge" data-shot="3"><img class="inline-shot" src="shots/m-draft.webp" width="720" height="706" alt="A follow-up drafted by Ellipsa" loading="lazy"><time>4:10</time><h3>The follow-up</h3><p>Your follow-up is drafted in your own voice and the next call is booked. It waits for your yes.</p></li>
       </ol>
       <figure class="stage">
         <div class="screen">
           <img src="shots/briefing.webp" alt="Ellipsa's morning briefing" data-shot="0" width="1440" height="1012" loading="lazy">
-          <img src="shots/person.webp" alt="A person card in Ellipsa" data-shot="1" width="1440" height="1012" loading="lazy">
-          <img src="shots/chat.webp" alt="Asking Ellipsa a question" data-shot="2" width="1440" height="1012" loading="lazy">
+          <img src="shots/brief.webp" alt="Ellipsa’s brief before a call with Priya" data-shot="1" width="900" height="633" loading="lazy">
+          <img src="shots/notes.webp" alt="Meeting notes Ellipsa wrote after the call" data-shot="2" width="1440" height="1012" loading="lazy">
           <img src="shots/draft.webp" alt="A follow-up drafted by Ellipsa" data-shot="3" width="1440" height="1012" loading="lazy">
         </div>
       </figure>
@@ -82,17 +98,22 @@
 
   <section id="calls" class="calls" data-mode="listen" aria-labelledby="calls-title">
     <h2 id="calls-title">it sits in on your calls. nobody else does.</h2>
-    <p class="lede">Hold the button and Ellipsa listens to the call on your own computer. No bot joins, and the dots turn red so you always know. It’s everything your notetaker does, plus your memory.</p>
+    <p class="lede">Hold the button and Ellipsa listens to the call on your own computer. No bot joins, and the dots turn red so you always know. It’s everything your notetaker does, it answers while you talk, and it feeds your next brief.</p>
     <ol class="call-steps">
       <li>
         <figure><img src="shots/observe-live.webp" alt="Ellipsa answering a question in the middle of a call; its button shows red listening bars" width="1440" height="1012" loading="lazy"></figure>
         <h3>Ask it anything, mid-call</h3>
-        <p>“What did we agree on pricing?” The answer comes from your own email, notes and past calls while you’re still talking.</p>
+        <p>“What did we agree on pricing?” The answer comes in about three seconds, from your own email, notes and past calls, while you’re still talking.</p>
       </li>
       <li>
         <figure><img src="shots/notes.webp" alt="Meeting notes Ellipsa wrote after a call: a summary, action items with owners and dates, and decisions" width="1440" height="1012" loading="lazy"></figure>
         <h3>Hang up. It’s all written down.</h3>
         <p>The full transcript, who said what, and notes topic by topic: decisions, action items with owners and dates, open questions. Names come from the invite or the people on your screen. Email the notes to everyone on the call in one click.</p>
+      </li>
+      <li>
+        <figure><img src="shots/person.webp" alt="A person card in Ellipsa: their recent calls and a suggested opener" width="1440" height="1012" loading="lazy"></figure>
+        <h3>Next time, it’s in the brief.</h3>
+        <p>What each of you promised on the call is kept with the person, beside every email and Slack thread between you. Before you speak again, it’s the first thing you see.</p>
       </li>
     </ol>
     <p class="fine">Call audio is streamed for transcription. To name who said what, it is kept encrypted on your computer until your notes are written, then deleted. No headphones? It tells your voice from the call coming out of your speakers.</p>
@@ -178,11 +199,11 @@
   </section>
 
   <section id="get" class="get" data-mode="happy" aria-labelledby="get-title">
-    <div class="get-head"><h2 id="get-title">go on, give it something to remember.</h2><div class="home home-get" aria-hidden="true"></div></div>
+    <div class="get-head"><h2 id="get-title">try it before your next call.</h2><div class="home home-get" aria-hidden="true"></div></div>
     <div class="ways">
       <form id="beta" class="win" novalidate>
         <h3>Windows 10 and 11</h3>
-        <p>Ellipsa is in a private beta. Ask with the Google account you work in, and you’ll get the installer when you’re in. It reads your last 30 days, so your first briefing already knows your people. On a Mac? Ask too, and say so below: the Mac version is in testing.</p>
+        <p>Ellipsa is in a private beta. Ask with the Google account you work in, and you’ll get the installer when you’re in. It reads your last 30 days, so the brief for your next call already knows the person. On a Mac? Ask too, and say so below: the Mac version is in testing.</p>
         <label for="beta-email">Google account (Gmail or work)</label>
         <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
         <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -207,7 +228,7 @@
   </section>
 
   <footer class="foot">
-    <p class="foot-brand"><a class="wordmark" href="./">ellipsa</a> <span class="foot-tag">your AI self.</span></p>
+    <p class="foot-brand"><a class="wordmark" href="./">ellipsa</a> <span class="foot-tag">never walk into a call cold.</span></p>
     <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="mailto:husseinkhidr2@gmail.com">husseinkhidr2@gmail.com</a></nav>
     <p class="fine">© 2026 Ellipsa</p>
   </footer>

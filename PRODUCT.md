@@ -12,15 +12,22 @@ Static HTML, CSS and JavaScript on GitHub Pages (repo ellipsisisalreadytaken/ell
 
 ## Users
 
-People whose work runs on relationships and who hold dozens of live ones at once: founders, consultants, agency owners, freelancers. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows today.
+Founders, consultants and salespeople with ten or more outside calls a week: people whose work runs on relationships. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows today.
 
 ## Product Purpose
 
-Ellipsa is a desktop AI assistant that keeps a private memory of the people, promises and open loops in your work, and steps in at the right moment: a morning briefing, context before a call, answers during it, the follow-up after. Success for the site: a Windows visitor downloads and installs the beta; a Mac visitor joins the Mac waitlist.
+Ellipsa is a desktop AI assistant that keeps a private memory of the people, promises and open loops in your work, and steps in at the right moment: a morning briefing, context before a call, answers during it, the follow-up after. Success for the site: a visitor gets "ready for every call in a minute" from the first screen; a Windows visitor downloads and installs the beta; a Mac visitor joins the Mac waitlist.
 
 ## Positioning
 
-Organised around people and promises, not around what was on your screen or a single meeting. "Others remember what you saw. Ellipsa remembers who you owe." It acts on that memory (drafts in your voice, booking calls, tasks), always waiting for approval before anything is sent or changed.
+Settled 18 Oct 2026 (the app repo's `docs/strategy/positioning.md` is the source; revisit 17 Nov 2026).
+Lead with the brief before a call: "Ellipsa gets you ready for every call in a minute." Tagline:
+"never walk into a call cold." A minute before each call it shows who they are, what you last
+discussed and what you owe each other (owed items first, the follow-up already written), from your
+own email, Slack and past calls. For founders, consultants and salespeople with 10+ outside calls a
+week. Memory of every person is what makes the brief good, never the opening line. Don't lead with
+"your AI self", "remembers all your work" or a feature list, and keep answers during a call as the second act
+(proven on the founder's live calls, about 3 seconds), after the brief.
 
 ## Operating Context
 
