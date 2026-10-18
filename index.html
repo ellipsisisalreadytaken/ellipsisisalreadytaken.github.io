@@ -22,9 +22,8 @@
   <nav aria-label="Sections">
     <a href="how-it-works.html">How it works</a>
     <a href="#privacy">Privacy</a>
-    <a href="#get">Mac waitlist</a>
   </nav>
-  <a class="pill pill-small" href="#get">Get the Windows beta</a>
+  <a class="pill pill-small" href="#get">Get the beta</a>
 </header>
 
 <div class="mascot" aria-hidden="true">
@@ -39,8 +38,8 @@
       <h1>never walk into a call cold<span class="ellipsis" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr">…</span></h1>
       <p class="lede">Ellipsa gets you ready for every call in a minute: who they are, what you last discussed and what you owe each other, from your own email, Slack and past calls.</p>
       <div class="actions">
-        <a class="pill" href="#get">Get the Windows beta</a>
-        <a class="quiet" href="#get">On a Mac? Join the waitlist</a>
+        <a class="pill" href="#get">Get the beta</a>
+        <a class="quiet" href="#get">For Windows and Mac</a>
       </div>
     </div>
     <div class="hero-stage">
@@ -94,28 +93,30 @@
     <div class="get-head"><h2 id="get-title">try it before your next call.</h2><div class="home home-get" aria-hidden="true"></div></div>
     <div class="ways">
       <form id="beta" class="win" novalidate>
-        <h3>Windows 10 and 11</h3>
+        <h3>Windows or Mac</h3>
         <p>A private beta. Ask with the Google account you work in; it reads your last 30 days, so your next brief already knows the person.</p>
+        <fieldset class="choice">
+          <legend>Your computer</legend>
+          <label><input type="radio" name="platform" value="windows" checked><span>Windows</span></label>
+          <label><input type="radio" name="platform" value="mac"><span>Mac</span></label>
+        </fieldset>
         <label for="beta-email">Google account (Gmail or work)</label>
         <input id="beta-email" name="email" type="email" autocomplete="email" required aria-describedby="beta-msg">
         <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="beta-note">What would you use it for? <span class="opt">(optional)</span></label>
         <input id="beta-note" name="note" type="text" maxlength="300" autocomplete="off" placeholder="e.g. I’m on client calls all day">
-        <button class="pill" type="submit">Request the Windows beta</button>
+        <button class="pill" type="submit">Request the beta</button>
         <p id="beta-msg" class="msg" role="status"></p>
-        <p class="fine">Windows may warn that the installer comes from an unknown publisher; it’s safe to run.</p>
       </form>
-      <form id="mac" class="mac" novalidate>
-        <h3>macOS</h3>
-        <p>The Mac app is next. We’ll write once, when it’s ready.</p>
-        <label for="email">Email</label>
-        <div class="row">
-          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="mac-msg">
-          <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="pill" type="submit">Join the Mac waitlist</button>
-        </div>
-        <p id="mac-msg" class="msg" role="status"></p>
-      </form>
+      <div class="setup">
+        <h3>Installed with you</h3>
+        <p>A 15-minute call: we install it together, connect your Google account and finish on the brief for your next real call.</p>
+        <ul>
+          <li>Windows 10 and 11.</li>
+          <li>macOS 13 or later, Apple chip or Intel.</li>
+          <li>It’s a beta, so your computer asks once whether to trust it. We show you where to click.</li>
+        </ul>
+      </div>
     </div>
   </section>
 

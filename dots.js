@@ -362,9 +362,10 @@
   const video = $('.video video');
   if (video) fetch(video.getAttribute('src'), { method: 'HEAD' }).then(r => { if (!r.ok) $('.video').hidden = true; }).catch(() => { $('.video').hidden = true; });
 
-  // ---------- The Windows beta: a request, approved by the team ----------
+  // ---------- The beta, Windows or Mac: a request, approved by the team ----------
   const beta = $('#beta');
   const betaMsg = $('#beta-msg');
+  if (beta && /Mac/.test(navigator.userAgentData?.platform || navigator.platform || navigator.userAgent)) beta.platform.value = 'mac';
   beta?.addEventListener('submit', async e => {
     e.preventDefault();
     const email = beta.email.value.trim();
@@ -385,7 +386,7 @@
       const res = await fetch('https://ellipsa-proxy.ellipsa.workers.dev/beta/request', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email, note: beta.note.value, website: beta.website.value }),
+        body: JSON.stringify({ email, note: beta.note.value, platform: beta.platform.value, website: beta.website.value }),
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(body.error || 'The request didn’t go through.');
@@ -405,46 +406,4 @@
     }
   });
 
-  // ---------- The Mac waitlist ----------
-  const form = $('#mac');
-  const msg = $('#mac-msg');
-  form?.addEventListener('submit', async e => {
-    e.preventDefault();
-    const email = form.email.value.trim();
-    const button = $('button', form);
-    msg.className = 'msg';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-      form.email.setAttribute('aria-invalid', 'true');
-      msg.classList.add('err');
-      msg.textContent = 'That email address doesn’t look right. Check it and try again.';
-      form.email.focus();
-      return;
-    }
-    form.email.removeAttribute('aria-invalid');
-    button.setAttribute('aria-busy', 'true');
-    button.disabled = true;
-    msg.textContent = 'Adding you…';
-    setMode('ellipsis');
-    try {
-      const res = await fetch('https://ellipsa-proxy.ellipsa.workers.dev/waitlist', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email, platform: 'mac', website: form.website.value }),
-      });
-      const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.error || 'The waitlist didn’t answer.');
-      msg.classList.add('ok');
-      msg.textContent = 'You’re on the list. We’ll email you once, when the Mac app is ready.';
-      form.reset();
-      document.dispatchEvent(new CustomEvent('ellipsa:waitlist'));
-      setMode('happy', 'you’re on the list!');
-    } catch (err) {
-      msg.classList.add('err');
-      msg.textContent = `${err.message || 'Something went wrong.'} Try again in a minute, or email husseinkhidr2@gmail.com.`;
-      setMode('face', 'hmm, that didn’t work…');
-    } finally {
-      button.removeAttribute('aria-busy');
-      button.disabled = false;
-    }
-  });
 })();

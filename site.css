@@ -246,7 +246,18 @@ main section { padding: clamp(80px, 11vw, 160px) var(--pad); }
 .win .msg:empty { display: none; }
 .win .msg.ok { color: #86EFAC; }
 .win .msg.err { color: #FCA5A5; }
-.mac { background: var(--g100); }
+.mac, .setup { background: var(--g100); }
+.setup > p { color: #5E5E73; max-width: 40ch; }
+.setup ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; max-width: 40ch; }
+.setup li { position: relative; padding-left: 1.3em; }
+.setup li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+.choice { border: 0; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.choice legend { font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; color: #fff; }
+.win .choice label { margin: 0; font-weight: 400; }
+.choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice span { display: inline-block; padding: 0.55em 1.2em; border-radius: 999px; border: 1px solid #6B6B80; color: #fff; cursor: pointer; transition: background 160ms ease, color 160ms ease; }
+.choice input:checked + span { background: #fff; color: var(--ink); border-color: #fff; font-weight: 600; }
+.choice input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
 .mac > p:not(.msg) { color: #5E5E73; max-width: 40ch; }
 .mac label { font-size: 0.9rem; font-weight: 600; margin-top: 6px; }
 .mac .row { display: flex; gap: 8px; width: 100%; flex-wrap: wrap; }

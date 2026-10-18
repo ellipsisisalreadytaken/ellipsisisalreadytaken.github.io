@@ -8,15 +8,15 @@ web
 
 ## Stack
 
-Static HTML, CSS and JavaScript on GitHub Pages (repo ellipsisisalreadytaken/ellipsisisalreadytaken.github.io). No build step. Libraries such as three.js load from a pinned CDN version. Server-side needs (the Mac waitlist) go to the existing Cloudflare Worker at https://ellipsa-proxy.ellipsa.workers.dev.
+Static HTML, CSS and JavaScript on GitHub Pages (repo ellipsisisalreadytaken/ellipsisisalreadytaken.github.io). No build step. Libraries such as three.js load from a pinned CDN version. Server-side needs (beta requests) go to the existing Cloudflare Worker at https://ellipsa-proxy.ellipsa.workers.dev.
 
 ## Users
 
-Founders, consultants and agency owners with ten or more outside calls a week: people whose work runs on relationships and whose CRM is their inbox. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows today.
+Founders, consultants and agency owners with ten or more outside calls a week: people whose work runs on relationships and whose CRM is their inbox. They live in Gmail, Google Calendar, Slack, Notion and calls. Most of the people the founder wants to reach first use MacBooks; the app ships on Windows and Mac (from 18 Oct 2026).
 
 ## Product Purpose
 
-Ellipsa is a desktop AI assistant that keeps a private memory of the people, promises and open loops in your work, and steps in at the right moment: a morning briefing, context before a call, answers during it, the follow-up after. Success for the site: a visitor gets "ready for every call in a minute" from the first screen; a Windows visitor downloads and installs the beta; a Mac visitor joins the Mac waitlist.
+Ellipsa is a desktop AI assistant that keeps a private memory of the people, promises and open loops in your work, and steps in at the right moment: a morning briefing, context before a call, answers during it, the follow-up after. Success for the site: a visitor gets "ready for every call in a minute" from the first screen; a visitor on Windows or a Mac asks for the beta and is installed on a short call.
 
 ## Positioning
 
@@ -43,7 +43,7 @@ written, the next call booked. Memory of every person is what makes the brief go
 - Windows installer exists (Ellipsa-Setup-0.1.0.exe, ~97MB). It is not code-signed yet, so Windows SmartScreen will warn. Where it is publicly hosted is not decided yet (the app repo is private).
 - Google sign-in is limited to approved test users until Google verifies the app; public downloaders may not be able to connect Gmail yet. Undecided how the site handles this.
 - Memory is stored encrypted on the user's computer with daily encrypted backups. AI requests go through Ellipsa's relay to OpenAI.
-- Mac and Linux apps do not exist yet. Mac is next on the roadmap.
+- The Mac app is in beta (Apple chip and Intel .dmg files, not signed by Apple yet, so macOS asks once: Open Anyway). Call audio on a Mac comes through the microphone only, so calls need speakers. No Linux app.
 - Pricing is not decided. Do not show prices.
 
 ## Brand Commitments
@@ -66,4 +66,4 @@ written, the next call booked. Memory of every person is what makes the brief go
 1. Show a real moment, not a feature list: the specific promise remembered beats any adjective.
 2. The user stays in control: nothing is sent without approval, and the memory is theirs and local.
 3. Useful on day one: the 30-day read means no empty first week.
-4. Honest about stage: beta, Windows first, Mac coming.
+4. Honest about stage: a beta on Windows and Mac, installed with you.
