@@ -12,7 +12,7 @@
 <main>
   <nav><a href="./">Ellipsa</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
   <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: October 13, 2026</p>
+  <p class="meta">Last updated: October 28, 2026</p>
 
   <p>Ellipsa is a desktop assistant that runs on your own computer. This policy explains what information Ellipsa uses, where it is kept, who it is shared with, and the choices you have. In this policy, "we" and "us" mean the developer of Ellipsa, and "you" means the person using it.</p>
 
@@ -32,12 +32,13 @@
   <div class="table-wrap">
   <table>
     <tr><th>Service</th><th>What Ellipsa reads</th><th>What Ellipsa can do, with your approval</th></tr>
-    <tr><td>Gmail</td><td>Messages and their metadata (senders, recipients, subjects, dates, labels)</td><td>Create drafts, send email, apply labels, mark messages read</td></tr>
+    <tr><td>Email (Gmail)</td><td>Messages and their metadata (senders, recipients, subjects, dates, labels). Ellipsa reads your mail over IMAP with an app password you create in your Google Account and paste into Ellipsa; the password is stored on your computer, like your other sign-ins, and is never sent to us</td><td>Create drafts, send email (over SMTP with the same password), apply labels, mark messages read</td></tr>
     <tr><td>Google Calendar</td><td>Your events and their attendees (including their video-call links), and when you are free or busy</td><td>Create and update events, including sending invitations</td></tr>
     <tr><td>Google Docs and Sheets</td><td>Only the files Ellipsa creates for you; it cannot open your other files</td><td>Create documents and spreadsheets, and edit the ones it created</td></tr>
     <tr><td>Slack</td><td>Messages in the direct messages, group messages and channels you belong to, and the names and email addresses of members</td><td>Post messages</td></tr>
     <tr><td>Notion</td><td>Only the pages you choose to share with Ellipsa when you connect, and who edited them</td><td>Create and update pages, if you grant that</td></tr>
     <tr><td>GitHub</td><td>Issues, pull requests and comments you are involved in, and the people on them</td><td>Create issues and comments</td></tr>
+    <tr><td>LinkedIn</td><td>Only the data export you download from LinkedIn and pick in Settings: your messages (the conversations you wrote in, and recent ones waiting on you) and your connections' names, positions and companies. Ellipsa never connects to LinkedIn itself</td><td>Nothing</td></tr>
   </table>
   </div>
 
@@ -68,6 +69,7 @@
   <p><strong>Nobody else.</strong> We do not sell, rent or share your information with anyone else, except if required by law, or to protect against fraud or a security threat.</p>
 
   <h2>6. Google user data</h2>
+  <p>Ellipsa's Google sign-in asks for your profile, Google Calendar, and only the Docs and Sheets files Ellipsa creates. It no longer asks for access to Gmail: your mail is read over IMAP with the app password described above. Testers who signed in before October 28, 2026 and granted Gmail access keep that connection until they disconnect Google in Settings or remove Ellipsa's access in their Google Account.</p>
   <p>Ellipsa's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. In particular:</p>
   <ul>
     <li>Google user data is used only to provide and improve the features you use in Ellipsa.</li>
@@ -76,13 +78,13 @@
     <li>No person reads it, unless you give us permission for a specific message (for example when asking for help), it is needed for security, or the law requires it.</li>
     <li>It is not used to develop, improve or train general AI or machine-learning models.</li>
   </ul>
-  <p>Slack, Notion, GitHub, Linear and ClickUp data is handled the same way. Linear and ClickUp are connected with a personal API key you paste in Settings; it is stored on your computer like the other sign-ins.</p>
+  <p>Mail read over IMAP, and Slack, Notion, GitHub, Linear, ClickUp and LinkedIn data, are handled the same way. Linear and ClickUp are connected with a personal API key you paste in Settings; it is stored on your computer like the other sign-ins.</p>
 
   <h2>7. Retention and deletion</h2>
   <ul>
     <li>Ellipsa keeps information on your computer for the periods you choose in Settings, and deletes it after that.</li>
     <li>Settings → Delete all data permanently removes everything Ellipsa has stored. Uninstalling the app does not remove it on its own, so use that first.</li>
-    <li>You can disconnect any service in Settings, and revoke access from the service itself: <a href="https://myaccount.google.com/permissions">Google</a>, Slack (your workspace's app settings), Notion (Settings → Connections) and <a href="https://github.com/settings/applications">GitHub</a>. Disconnecting stops new access but does not delete what is already stored on your computer.</li>
+    <li>You can disconnect any service in Settings, and revoke access from the service itself: <a href="https://myaccount.google.com/permissions">Google</a> (for email, delete the Ellipsa app password at <a href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>), Slack (your workspace's app settings), Notion (Settings → Connections) and <a href="https://github.com/settings/applications">GitHub</a>. Disconnecting stops new access but does not delete what is already stored on your computer.</li>
     <li>To be removed from the waitlist, email us from the address you signed up with and we will delete it.</li>
   </ul>
 
